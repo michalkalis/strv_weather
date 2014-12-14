@@ -35,6 +35,26 @@
     }
 }
 
+- (BOOL)deleteAllObjectOfEntity:(NSString *)entity {
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSFetchRequest *allObjects = [[NSFetchRequest alloc] init];
+    [allObjects setEntity:[NSEntityDescription entityForName:entity inManagedObjectContext:context]];
+    [allObjects setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:allObjects error:&error];
+    
+    if (error != nil) {
+        return NO;
+    }
+    
+    for (NSManagedObject *o in objects) {
+        [context deleteObject:o];
+    }
+    
+    return YES;
+}
+
 #pragma mark - Core Data stack
 
 - (NSManagedObjectContext *)managedObjectContext {

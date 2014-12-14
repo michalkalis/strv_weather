@@ -19,5 +19,6 @@
 + (MKCoreDataManager *)sharedManager;
 
 - (void)saveContext;
+- (BOOL)deleteAllObjectOfEntity:(NSString *)entity;
 
 @end
