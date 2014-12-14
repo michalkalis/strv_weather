@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+    <entity name="MKLocation" representedClassName="Location" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="weathers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MKWeather" inverseName="location" inverseEntity="MKWeather" syncable="YES"/>
+    </entity>
+    <entity name="MKWeather" representedClassName="Weather" syncable="YES">
+        <attribute name="humidity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="precipitation" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="textualDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="windDirection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="windSpeed" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MKLocation" inverseName="weathers" inverseEntity="MKLocation" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MKLocation" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="MKWeather" positionX="153" positionY="-15" width="128" height="165"/>
+    </elements>
 </model>

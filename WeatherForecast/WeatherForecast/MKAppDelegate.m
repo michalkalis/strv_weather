@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 strv. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "MKAppDelegate.h"
 
-@interface AppDelegate ()
+@interface MKAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation MKAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

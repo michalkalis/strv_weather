@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 @import CoreData;
 
-@interface CoreDataManager : NSObject
+@interface MKCoreDataManager : NSObject
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *inMemoryManagedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-+ (CoreDataManager *)sharedManager;
++ (MKCoreDataManager *)sharedManager;
 
 - (void)saveContext;
 

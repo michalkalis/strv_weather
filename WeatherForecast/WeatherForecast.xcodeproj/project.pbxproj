@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CD8B6631A3C456C00B8B28D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6621A3C456C00B8B28D /* main.m */; };
-		6CD8B6661A3C456C00B8B28D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6651A3C456C00B8B28D /* AppDelegate.m */; };
+		6CD8B6661A3C456C00B8B28D /* MKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6651A3C456C00B8B28D /* MKAppDelegate.m */; };
 		6CD8B6691A3C456C00B8B28D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6681A3C456C00B8B28D /* FirstViewController.m */; };
 		6CD8B66C1A3C456C00B8B28D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B66B1A3C456C00B8B28D /* SecondViewController.m */; };
 		6CD8B66F1A3C456C00B8B28D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CD8B66D1A3C456C00B8B28D /* Main.storyboard */; };
@@ -16,8 +16,10 @@
 		6CD8B6741A3C456C00B8B28D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD8B6721A3C456C00B8B28D /* LaunchScreen.xib */; };
 		6CD8B6801A3C456D00B8B28D /* WeatherForecastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B67F1A3C456D00B8B28D /* WeatherForecastTests.m */; };
 		6CD8B6901A3C64D300B8B28D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD8B68F1A3C64D300B8B28D /* CoreData.framework */; };
-		6CD8B69E1A3C677900B8B28D /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69D1A3C677900B8B28D /* CoreDataManager.m */; };
+		6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */; };
 		6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69F1A3C685F00B8B28D /* CoreDataModel.xcdatamodeld */; };
+		6CD8B6A41A3C9D2100B8B28D /* MKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6A31A3C9D2100B8B28D /* MKLocation.m */; };
+		6CD8B6A71A3C9D2200B8B28D /* MKWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6A61A3C9D2200B8B28D /* MKWeather.m */; };
 		C55316631457E564435E1C0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B88358BF6B4D58BC3B3D55 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +37,8 @@
 		6CD8B65D1A3C456C00B8B28D /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8B6611A3C456C00B8B28D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CD8B6621A3C456C00B8B28D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6CD8B6641A3C456C00B8B28D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6CD8B6651A3C456C00B8B28D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6CD8B6641A3C456C00B8B28D /* MKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAppDelegate.h; sourceTree = "<group>"; };
+		6CD8B6651A3C456C00B8B28D /* MKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKAppDelegate.m; sourceTree = "<group>"; };
 		6CD8B6671A3C456C00B8B28D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		6CD8B6681A3C456C00B8B28D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		6CD8B66A1A3C456C00B8B28D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -48,9 +50,13 @@
 		6CD8B67E1A3C456D00B8B28D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CD8B67F1A3C456D00B8B28D /* WeatherForecastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastTests.m; sourceTree = "<group>"; };
 		6CD8B68F1A3C64D300B8B28D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6CD8B69C1A3C677900B8B28D /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
-		6CD8B69D1A3C677900B8B28D /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		6CD8B69C1A3C677900B8B28D /* MKCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCoreDataManager.h; sourceTree = "<group>"; };
+		6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCoreDataManager.m; sourceTree = "<group>"; };
 		6CD8B6A01A3C685F00B8B28D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6CD8B6A21A3C9D2100B8B28D /* MKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLocation.h; sourceTree = "<group>"; };
+		6CD8B6A31A3C9D2100B8B28D /* MKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLocation.m; sourceTree = "<group>"; };
+		6CD8B6A51A3C9D2200B8B28D /* MKWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKWeather.h; sourceTree = "<group>"; };
+		6CD8B6A61A3C9D2200B8B28D /* MKWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKWeather.m; sourceTree = "<group>"; };
 		8FF0312C346BEDD651BF2B0C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90B88358BF6B4D58BC3B3D55 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2B4C0C90C827449E4E9C2B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,12 +145,8 @@
 				6CD8B68B1A3C459F00B8B28D /* Models */,
 				6CD8B68C1A3C45AA00B8B28D /* Views */,
 				6CD8B68A1A3C459700B8B28D /* Controllers */,
-				6CD8B6641A3C456C00B8B28D /* AppDelegate.h */,
-				6CD8B6651A3C456C00B8B28D /* AppDelegate.m */,
-				6CD8B6671A3C456C00B8B28D /* FirstViewController.h */,
-				6CD8B6681A3C456C00B8B28D /* FirstViewController.m */,
-				6CD8B66A1A3C456C00B8B28D /* SecondViewController.h */,
-				6CD8B66B1A3C456C00B8B28D /* SecondViewController.m */,
+				6CD8B6641A3C456C00B8B28D /* MKAppDelegate.h */,
+				6CD8B6651A3C456C00B8B28D /* MKAppDelegate.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -152,6 +154,10 @@
 		6CD8B68A1A3C459700B8B28D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6CD8B6671A3C456C00B8B28D /* FirstViewController.h */,
+				6CD8B6681A3C456C00B8B28D /* FirstViewController.m */,
+				6CD8B66A1A3C456C00B8B28D /* SecondViewController.h */,
+				6CD8B66B1A3C456C00B8B28D /* SecondViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +165,10 @@
 		6CD8B68B1A3C459F00B8B28D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6CD8B6A51A3C9D2200B8B28D /* MKWeather.h */,
+				6CD8B6A61A3C9D2200B8B28D /* MKWeather.m */,
+				6CD8B6A21A3C9D2100B8B28D /* MKLocation.h */,
+				6CD8B6A31A3C9D2100B8B28D /* MKLocation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -200,8 +210,8 @@
 		6CD8B6981A3C669A00B8B28D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				6CD8B69C1A3C677900B8B28D /* CoreDataManager.h */,
-				6CD8B69D1A3C677900B8B28D /* CoreDataManager.m */,
+				6CD8B69C1A3C677900B8B28D /* MKCoreDataManager.h */,
+				6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -270,6 +280,7 @@
 		6CD8B6551A3C456C00B8B28D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MK;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = strv;
 				TargetAttributes = {
@@ -360,9 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CD8B66C1A3C456C00B8B28D /* SecondViewController.m in Sources */,
-				6CD8B6661A3C456C00B8B28D /* AppDelegate.m in Sources */,
+				6CD8B6A41A3C9D2100B8B28D /* MKLocation.m in Sources */,
+				6CD8B6661A3C456C00B8B28D /* MKAppDelegate.m in Sources */,
 				6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */,
-				6CD8B69E1A3C677900B8B28D /* CoreDataManager.m in Sources */,
+				6CD8B6A71A3C9D2200B8B28D /* MKWeather.m in Sources */,
+				6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */,
 				6CD8B6691A3C456C00B8B28D /* FirstViewController.m in Sources */,
 				6CD8B6631A3C456C00B8B28D /* main.m in Sources */,
 			);

@@ -6,20 +6,20 @@
 //  Copyright (c) 2014 strv. All rights reserved.
 //
 
-#import "CoreDataManager.h"
+#import "MKCoreDataManager.h"
 
-@implementation CoreDataManager
+@implementation MKCoreDataManager
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize inMemoryManagedObjectContext = _inMemmoryManagedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-+ (CoreDataManager *)sharedManager {
-    static CoreDataManager *inst;
++ (MKCoreDataManager *)sharedManager {
+    static MKCoreDataManager *inst;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        inst = [[CoreDataManager alloc] init];
+        inst = [[MKCoreDataManager alloc] init];
     });
     return inst;
 }
