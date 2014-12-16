@@ -22,6 +22,13 @@
         // Firstly remove the previously stored weather objects
         [[MKCoreDataManager sharedManager] deleteAllObjectOfEntity:@"MKWeather"];
         
+        // Location name
+        NSArray *nearestAreas = [NSObject returnObjectOrNil:data[@"nearest_area"]];
+        if (nearestAreas && nearestAreas.count > 0) {
+            location.city = [MKWeatherBuilder parseCityFromDictionary:nearestAreas.firstObject];
+            location.country = [MKWeatherBuilder parseCountryFromDictionary:nearestAreas.firstObject];
+        }
+        
         // Current weather
         NSArray *currentConditions = [NSObject returnObjectOrNil:data[@"current_condition"]];
         
@@ -53,6 +60,26 @@
         
         [[MKCoreDataManager sharedManager] saveContext];
     }
+}
+
++ (NSString *)parseValueFromArrayOfDictionaries:(NSArray *)dictionaries forKey:(NSString *)key {
+    if (dictionaries && dictionaries.count > 0) {
+        return [NSObject returnObjectOrNil:dictionaries.firstObject[key]];
+    }
+    
+    return nil;
+}
+
++ (NSString *)parseCityFromDictionary:(NSDictionary *)nearestAreaDictionary {
+    NSArray *areaNames = [NSObject returnObjectOrNil:nearestAreaDictionary[@"areaName"]];
+    
+    return [MKWeatherBuilder parseValueFromArrayOfDictionaries:areaNames forKey:@"value"];
+}
+
++ (NSString *)parseCountryFromDictionary:(NSDictionary *)nearestAreaDictionary {
+    NSArray *countries = [NSObject returnObjectOrNil:nearestAreaDictionary[@"country"]];
+    
+    return [MKWeatherBuilder parseValueFromArrayOfDictionaries:countries forKey:@"value"];
 }
 
 + (MKWeather *)createWeatherFromDictionary:(NSDictionary *)weatherDictionary current:(BOOL)current {

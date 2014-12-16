@@ -25,4 +25,57 @@
 @dynamic forecastLocation;
 @dynamic currentWeatherLocation;
 
+- (NSString *)weatherStringInUnitsOfTemperature:(MKWeatherUnitsOfTemperatureType)temperatureType {
+    if (temperatureType == MKWeatherUnitsOfTemperatureTypeCelsius) {
+        return [NSString stringWithFormat:@"%@℃ | %@", self.temperatureInCelsius, self.textualDescription];
+    }
+    else if (temperatureType == MKWeatherUnitsOfTemperatureTypeFahrenheit) {
+        return [NSString stringWithFormat:@"%@℉ | %@", self.temperatureInFahrenheit, self.textualDescription];
+    }
+    
+    return nil;
+}
+
+- (UIImage *)weatherImageFromTextualDescription {
+    UIImage *resultImage = [UIImage imageNamed:@"Sun_Big"];
+    
+    if ([self.textualDescription caseInsensitiveCompare:@"cloudy"] == NSOrderedSame) {
+        return resultImage = [UIImage imageNamed:@"Cloudy_Big"];
+    }
+    else if ([self.textualDescription caseInsensitiveCompare:@"sunny"] == NSOrderedSame) {
+        return resultImage;
+    }
+    else if ([self.textualDescription caseInsensitiveCompare:@"lightning"] == NSOrderedSame) {
+        return resultImage = [UIImage imageNamed:@"Lightning_Big"];
+    }
+    else if ([self.textualDescription caseInsensitiveCompare:@"windy"] == NSOrderedSame) {
+        return resultImage = [UIImage imageNamed:@"WInd_Big"];
+    }
+    
+    return resultImage;
+}
+
+- (NSString *)windSpeedStringInUnitsOfLength:(MKWeatherUnitsOfLengthType)lengthType {
+    if (lengthType == MKWeatherUnitsOfLengthTypeKilometers) {
+        return [NSString stringWithFormat:@"%@ km/h", self.windSpeedInKilometers];
+    }
+    else if (lengthType == MKWeatherUnitsOfLengthTypeMiles) {
+        return [NSString stringWithFormat:@"%@ mph", self.windSpeedInMiles];
+    }
+    
+    return nil;
+}
+
+- (NSString *)humidityString {
+    return [NSString stringWithFormat:@"%@%%", self.humidity];
+}
+
+- (NSString *)precipitationString {
+    return [NSString stringWithFormat:@"%@ mm", self.precipitation];
+}
+
+- (NSString *)pressureString {
+    return [NSString stringWithFormat:@"%@ hPa", self.pressure];
+}
+
 @end

@@ -22,7 +22,7 @@
 + (MKCoreDataManager *)sharedManager;
 
 - (void)saveContext;
-- (MKLocation *)updateCurrentLocationObjectWithLocation:(CLLocation *)location name:(NSString *)name;
+- (MKLocation *)fetchCurrentLocationObject;
 - (BOOL)deleteAllObjectOfEntity:(NSString *)entity;
 
 @end

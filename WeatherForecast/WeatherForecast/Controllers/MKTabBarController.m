@@ -12,6 +12,7 @@
 #import "MKLocation.h"
 #import "MKWeather.h"
 
+NSString * const MKTabBarControllerDidStartUpdatingLocationNotification = @"MKTabBarControllerDidStartUpdatingLocationNotification";
 NSString * const MKTabBarControllerDidFetchWeatherDataNotification = @"MKTabBarControllerDidFetchWeatherDataNotification";
 
 NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
@@ -29,7 +30,7 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self handleLocation];
+    [self updateLocation];
 }
 
 #pragma mark - Auxiliary
@@ -40,9 +41,13 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
     }];
 }
 
+- (void)postLocationUpdatingStartNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:MKTabBarControllerDidStartUpdatingLocationNotification object:nil];
+}
+
 #pragma mark - Location
 
-- (void)handleLocation {
+- (void)updateLocation {
     // Location services disabled, skipping location update
     if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
         [self stopGettingLocation];
@@ -56,6 +61,7 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
             [self.locationManager requestWhenInUseAuthorization];
         }
         else {
+            [self postLocationUpdatingStartNotification];
             [self.locationManager startUpdatingLocation];
         }
         
@@ -72,6 +78,7 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorized || status == kCLAuthorizationStatusRestricted) {
+        [self postLocationUpdatingStartNotification];
         [self.locationManager startUpdatingLocation];
     }
 }
@@ -83,7 +90,15 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stopGettingLocation) object:nil];
         [self stopGettingLocation];
         
-        MKLocation *locationObject = [[MKCoreDataManager sharedManager] updateCurrentLocationObjectWithLocation:location name:nil];
+        MKLocation *locationObject = [[MKCoreDataManager sharedManager] fetchCurrentLocationObject];
+        
+        
+        if (location) {
+            locationObject.longitude = [@(location.coordinate.longitude) stringValue];
+            locationObject.latitude = [@(location.coordinate.latitude) stringValue];
+        }
+        
+        [[MKCoreDataManager sharedManager] saveContext];
         
         [self fetchWeatherDataForLocation:locationObject];
     }

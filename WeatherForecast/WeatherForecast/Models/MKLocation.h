@@ -16,10 +16,14 @@
 @property (nonatomic, retain) NSNumber *isCurrentLocation;
 @property (nonatomic, retain) NSString * latitude;
 @property (nonatomic, retain) NSString * longitude;
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * city;
+@property (nonatomic, retain) NSString * country;
 @property (nonatomic, retain) NSString * zip;
 @property (nonatomic, retain) NSSet *forecasts;
 @property (nonatomic, retain) MKWeather *currentWeather;
+
+- (NSString *)concatenateCityAndCountryStrings;
+
 @end
 
 @interface MKLocation (CoreDataGeneratedAccessors)

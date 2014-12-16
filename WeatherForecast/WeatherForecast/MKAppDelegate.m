@@ -16,7 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self customizeAppearance];
+    
     return YES;
 }
 
@@ -40,6 +41,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Auxiliary
+
+- (void)customizeAppearance {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"white_background"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigation_bar_shadow_line"]];
 }
 
 @end

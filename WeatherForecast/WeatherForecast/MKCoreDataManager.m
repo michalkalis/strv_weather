@@ -37,7 +37,7 @@
     }
 }
 
-- (MKLocation *)updateCurrentLocationObjectWithLocation:(CLLocation *)location name:(NSString *)name {
+- (MKLocation *)fetchCurrentLocationObject {
     NSManagedObjectContext *context = self.managedObjectContext;
     NSFetchRequest *currentLocationRequest = [[NSFetchRequest alloc] init];
     [currentLocationRequest setEntity:[NSEntityDescription entityForName:@"MKLocation" inManagedObjectContext:context]];
@@ -57,17 +57,6 @@
     else {
         locationObject = objects.firstObject;
     }
-    
-    if (location) {
-        locationObject.longitude = [@(location.coordinate.longitude) stringValue];
-        locationObject.latitude = [@(location.coordinate.latitude) stringValue];
-    }
-    
-    if (name) {
-        locationObject.name = name;
-    }
-    
-    [[MKCoreDataManager sharedManager] saveContext];
     
     return locationObject;
 }

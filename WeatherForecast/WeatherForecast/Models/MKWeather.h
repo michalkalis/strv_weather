@@ -9,6 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@import UIKit;
+
+typedef NS_ENUM(NSInteger, MKWeatherUnitsOfTemperatureType) {
+    MKWeatherUnitsOfTemperatureTypeCelsius,
+    MKWeatherUnitsOfTemperatureTypeFahrenheit
+};
+
+typedef NS_ENUM(NSInteger, MKWeatherUnitsOfLengthType) {
+    MKWeatherUnitsOfLengthTypeKilometers,
+    MKWeatherUnitsOfLengthTypeMiles
+};
+
 @class MKLocation;
 
 @interface MKWeather : NSManagedObject
@@ -25,5 +37,12 @@
 @property (nonatomic, retain) NSString * windSpeedInMiles;
 @property (nonatomic, retain) MKLocation *forecastLocation;
 @property (nonatomic, retain) MKLocation *currentWeatherLocation;
+
+- (NSString *)weatherStringInUnitsOfTemperature:(MKWeatherUnitsOfTemperatureType)temperatureType;
+- (UIImage *)weatherImageFromTextualDescription;
+- (NSString *)windSpeedStringInUnitsOfLength:(MKWeatherUnitsOfLengthType)lengthType;
+- (NSString *)humidityString;
+- (NSString *)precipitationString;
+- (NSString *)pressureString;
 
 @end

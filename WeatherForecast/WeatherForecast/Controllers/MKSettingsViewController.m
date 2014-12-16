@@ -8,6 +8,9 @@
 
 #import "MKSettingsViewController.h"
 
+NSString * const MKSettingsViewControllerUnitsOfTemperatureKey = @"MKSettingsViewControllerUnitsOfTemperatureKey";
+NSString * const MKSettingsViewControllerUnitsOfLengthKey = @"MKSettingsViewControllerUnitsOfLengthKey";
+
 @interface MKSettingsViewController ()
 
 @end
