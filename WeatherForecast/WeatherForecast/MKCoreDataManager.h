@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 @import CoreData;
+@import CoreLocation;
+
+@class MKLocation;
 
 @interface MKCoreDataManager : NSObject
 
@@ -19,6 +22,7 @@
 + (MKCoreDataManager *)sharedManager;
 
 - (void)saveContext;
+- (MKLocation *)updateCurrentLocationObjectWithLocation:(CLLocation *)location name:(NSString *)name;
 - (BOOL)deleteAllObjectOfEntity:(NSString *)entity;
 
 @end

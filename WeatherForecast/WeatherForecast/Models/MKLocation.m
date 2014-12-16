@@ -12,6 +12,7 @@
 
 @implementation MKLocation
 
+@dynamic isCurrentLocation;
 @dynamic latitude;
 @dynamic longitude;
 @dynamic name;

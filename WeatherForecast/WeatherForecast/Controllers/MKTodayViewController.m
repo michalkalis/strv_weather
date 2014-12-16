@@ -7,15 +7,18 @@
 //
 
 #import "MKTodayViewController.h"
+#import "MKTabBarController.h"
+
 #import "MKWeatherAPIClient.h"
 #import "MKWeather.h"
 #import "MKLocation.h"
-#import "MKCoreDataManager.h"
-#import "NSManagedObject+MKCustomInit.h"
+
+#import "NSNotificationCenter+MKOneObserver.h"
 
 @interface MKTodayViewController ()
 
 @property (nonatomic, strong) MKWeather *currentWeather;
+@property (nonatomic, strong) MKLocation *selectedLocation;
 
 @end
 
@@ -26,11 +29,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    MKLocation *location = [[MKLocation alloc] initWithContext:[MKCoreDataManager sharedManager].managedObjectContext];
-    location.latitude = [@49.19106 stringValue];
-    location.longitude = [@16.611419 stringValue];
-    location.name = @"Brno";
+    [self updateUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
+    [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification selector:@selector(updateWeatherData:) object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification object:nil];
+}
+
+#pragma mark - Auxiliary
+
+- (void)updateUI {
+    
+}
+
+- (void)fetchWeatherDataForLocation:(MKLocation *)location {
     [[MKWeatherAPIClient sharedClient] fetchWeatherDataAtLocation:location withBlock:^(MKLocation *location, NSError *error) {
         self.currentWeather = location.currentWeather;
         
@@ -38,8 +58,14 @@
     }];
 }
 
-- (void)updateUI {
+#pragma mark - Notifications
+
+- (void)updateWeatherData:(NSNotification *)notification {
+    MKLocation *location = notification.object;
+    self.selectedLocation = location;
+    self.currentWeather = self.selectedLocation.currentWeather;
     
+    [self updateUI];
 }
 
 @end

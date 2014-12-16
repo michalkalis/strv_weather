@@ -7,6 +7,8 @@
 //
 
 #import "MKCoreDataManager.h"
+#import "MKLocation.h"
+#import "NSManagedObject+MKCustomInit.h"
 
 @implementation MKCoreDataManager
 
@@ -35,6 +37,41 @@
     }
 }
 
+- (MKLocation *)updateCurrentLocationObjectWithLocation:(CLLocation *)location name:(NSString *)name {
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSFetchRequest *currentLocationRequest = [[NSFetchRequest alloc] init];
+    [currentLocationRequest setEntity:[NSEntityDescription entityForName:@"MKLocation" inManagedObjectContext:context]];
+    currentLocationRequest.predicate = [NSPredicate predicateWithFormat:@"isCurrentLocation == %@", @YES];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:currentLocationRequest error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    
+    MKLocation *locationObject;
+    if (objects.count == 0) {
+        locationObject = [[MKLocation alloc] initWithContext:[MKCoreDataManager sharedManager].managedObjectContext];
+    }
+    else {
+        locationObject = objects.firstObject;
+    }
+    
+    if (location) {
+        locationObject.longitude = [@(location.coordinate.longitude) stringValue];
+        locationObject.latitude = [@(location.coordinate.latitude) stringValue];
+    }
+    
+    if (name) {
+        locationObject.name = name;
+    }
+    
+    [[MKCoreDataManager sharedManager] saveContext];
+    
+    return locationObject;
+}
+
 - (BOOL)deleteAllObjectOfEntity:(NSString *)entity {
     NSManagedObjectContext *context = self.managedObjectContext;
     NSFetchRequest *allObjects = [[NSFetchRequest alloc] init];
@@ -51,6 +88,8 @@
     for (NSManagedObject *o in objects) {
         [context deleteObject:o];
     }
+    
+    [[MKCoreDataManager sharedManager] saveContext];
     
     return YES;
 }

@@ -31,9 +31,6 @@ NSString * const MKHTTPSessionManagerURLString = @"https://api.worldweatheronlin
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"q"] = [NSString stringWithFormat:@"%@,%@", location.latitude, location.longitude];
-#ifdef DEBUG
-    parameters[@"q"] = @"Brno";
-#endif
     parameters[@"format"] = @"json";
     parameters[@"num_of_days"] = @5;
     parameters[@"tp"] = @24;

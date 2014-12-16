@@ -13,6 +13,7 @@
 
 @interface MKLocation : NSManagedObject
 
+@property (nonatomic, retain) NSNumber *isCurrentLocation;
 @property (nonatomic, retain) NSString * latitude;
 @property (nonatomic, retain) NSString * longitude;
 @property (nonatomic, retain) NSString * name;
