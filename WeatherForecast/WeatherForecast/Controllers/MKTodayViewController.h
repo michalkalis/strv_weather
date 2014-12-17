@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKViewController.h"
 
-@interface MKTodayViewController : UIViewController
+@interface MKTodayViewController : MKViewController
 
 @end

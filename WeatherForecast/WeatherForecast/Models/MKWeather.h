@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, MKWeatherUnitsOfLengthType) {
 @property (nonatomic, retain) MKLocation *forecastLocation;
 @property (nonatomic, retain) MKLocation *currentWeatherLocation;
 
+- (NSString *)temperatureWithDegreesInUnitsOfTemperature:(MKWeatherUnitsOfTemperatureType)temperatureType;
 - (NSString *)weatherStringInUnitsOfTemperature:(MKWeatherUnitsOfTemperatureType)temperatureType;
 - (UIImage *)weatherImageFromTextualDescription;
 - (NSString *)windSpeedStringInUnitsOfLength:(MKWeatherUnitsOfLengthType)lengthType;

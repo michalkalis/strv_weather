@@ -13,6 +13,8 @@
 #import "MKLocation.h"
 #import "MKWeather.h"
 
+#import "NSDate+MKUtils.h"
+
 @implementation MKWeatherBuilder
 
 + (void)buildWeatherObjectsForLocation:(MKLocation *)location fromJSONObject:(id)JSONObject {
@@ -47,12 +49,18 @@
             NSMutableSet *weatherForecasts = [NSMutableSet set];
             
             for (NSDictionary *w in forecastWeathers) {
+                MKWeather *weather;
                 NSArray *weatherArray = [NSObject returnObjectOrNil:w[@"hourly"]];
                 
                 if (weatherArray && weatherArray.count > 0) {
                     NSDictionary *weatherDictionary = weatherArray.firstObject;
-                    [weatherForecasts addObject:[MKWeatherBuilder createWeatherFromDictionary:weatherDictionary current:NO]];
+                    weather = [MKWeatherBuilder createWeatherFromDictionary:weatherDictionary current:NO];
+                    
+                    weather.date = [NSDate dateFromString:[NSObject returnObjectOrNil:w[@"date"]]];
+                    
+                    [weatherForecasts addObject:weather];
                 }
+                
             }
             
             location.forecasts = [weatherForecasts copy];
@@ -93,10 +101,14 @@
         weather.windDirection = [NSObject returnObjectOrNil:weatherDictionary[@"winddir16Point"]];
         weather.windSpeedInKilometers = [NSObject returnObjectOrNil:weatherDictionary[@"windspeedKmph"]];
         weather.windSpeedInMiles = [NSObject returnObjectOrNil:weatherDictionary[@"windspeedMiles"]];
+        weather.temperatureInCelsius = [NSObject returnObjectOrNil:weatherDictionary[@"temp_C"]];
+        weather.temperatureInFahrenheit = [NSObject returnObjectOrNil:weatherDictionary[@"temp_F"]];
+    }
+    else {
+        weather.temperatureInCelsius = [NSObject returnObjectOrNil:weatherDictionary[@"tempC"]];
+        weather.temperatureInFahrenheit = [NSObject returnObjectOrNil:weatherDictionary[@"tempF"]];
     }
     
-    weather.temperatureInCelsius = [NSObject returnObjectOrNil:weatherDictionary[@"temp_C"]];
-    weather.temperatureInFahrenheit = [NSObject returnObjectOrNil:weatherDictionary[@"temp_F"]];
     
     NSArray *weatherDescriptions = [NSObject returnObjectOrNil:weatherDictionary[@"weatherDesc"]];
     if (weatherDescriptions) {

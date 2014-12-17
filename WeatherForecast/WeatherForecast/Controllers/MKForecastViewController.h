@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKViewController.h"
 
-@interface MKForecastViewController : UIViewController
+@interface MKForecastViewController : MKViewController
 
 @end

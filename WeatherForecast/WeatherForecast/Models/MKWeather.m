@@ -25,6 +25,17 @@
 @dynamic forecastLocation;
 @dynamic currentWeatherLocation;
 
+- (NSString *)temperatureWithDegreesInUnitsOfTemperature:(MKWeatherUnitsOfTemperatureType)temperatureType {
+    if (temperatureType == MKWeatherUnitsOfTemperatureTypeCelsius) {
+        return [NSString stringWithFormat:@"%@°", self.temperatureInCelsius];
+    }
+    else if (temperatureType == MKWeatherUnitsOfTemperatureTypeFahrenheit) {
+        return [NSString stringWithFormat:@"%@°", self.temperatureInFahrenheit];
+    }
+    
+    return nil;
+}
+
 - (NSString *)weatherStringInUnitsOfTemperature:(MKWeatherUnitsOfTemperatureType)temperatureType {
     if (temperatureType == MKWeatherUnitsOfTemperatureTypeCelsius) {
         return [NSString stringWithFormat:@"%@℃ | %@", self.temperatureInCelsius, self.textualDescription];

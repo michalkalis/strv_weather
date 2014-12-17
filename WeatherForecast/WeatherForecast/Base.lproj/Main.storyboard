@@ -3,12 +3,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="ProximaNova-Light.otf">
+            <string>ProximaNova-Light</string>
+        </mutableArray>
         <mutableArray key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
@@ -247,30 +253,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LTx-hQ-z0w">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nqn-kN-WZP">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MKForecastCellIdentifier" id="hfs-Ir-Ox9" customClass="MKForecastCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hfs-Ir-Ox9" id="Niu-cz-LrK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yvw-hk-LiM">
+                                                    <rect key="frame" x="14" y="17" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Lll-oB-Ydq"/>
+                                                        <constraint firstAttribute="height" constant="50" id="r4g-u7-u6F"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7N-dA-WSg">
+                                                    <rect key="frame" x="88" y="23" width="65" height="18"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-hJ-R5K">
+                                                    <rect key="frame" x="88" y="46" width="41" height="15"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upM-xf-qqt">
+                                                    <rect key="frame" x="511" y="19" width="80" height="55"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="55"/>
+                                                    <color key="textColor" red="0.18431372549019609" green="0.56862745098039214" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yvw-hk-LiM" firstAttribute="top" secondItem="Niu-cz-LrK" secondAttribute="top" constant="17" id="6CR-ab-7f6"/>
+                                                <constraint firstItem="upM-xf-qqt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J1c-hJ-R5K" secondAttribute="trailing" constant="15" id="MNT-TI-9DM"/>
+                                                <constraint firstItem="J1c-hJ-R5K" firstAttribute="top" secondItem="g7N-dA-WSg" secondAttribute="bottom" constant="5" id="TAv-zg-5nK"/>
+                                                <constraint firstItem="yvw-hk-LiM" firstAttribute="leading" secondItem="Niu-cz-LrK" secondAttribute="leading" constant="14" id="Tg3-Zu-W6l"/>
+                                                <constraint firstItem="yvw-hk-LiM" firstAttribute="top" secondItem="Niu-cz-LrK" secondAttribute="topMargin" constant="9" id="WYN-Ir-cGC"/>
+                                                <constraint firstItem="g7N-dA-WSg" firstAttribute="leading" secondItem="J1c-hJ-R5K" secondAttribute="trailing" constant="-41" id="b2U-LA-iqz"/>
+                                                <constraint firstItem="upM-xf-qqt" firstAttribute="top" secondItem="Niu-cz-LrK" secondAttribute="top" constant="19" id="fr8-db-8Yi"/>
+                                                <constraint firstItem="g7N-dA-WSg" firstAttribute="top" secondItem="Niu-cz-LrK" secondAttribute="top" constant="23" id="jDD-4Y-dHL"/>
+                                                <constraint firstItem="J1c-hJ-R5K" firstAttribute="leading" secondItem="g7N-dA-WSg" secondAttribute="leading" id="k3u-yX-4pn"/>
+                                                <constraint firstAttribute="trailing" secondItem="upM-xf-qqt" secondAttribute="trailing" constant="9" id="tZe-Ky-co6"/>
+                                                <constraint firstItem="g7N-dA-WSg" firstAttribute="leading" secondItem="yvw-hk-LiM" secondAttribute="trailing" constant="24" id="w2p-Gt-vbp"/>
+                                                <constraint firstItem="upM-xf-qqt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g7N-dA-WSg" secondAttribute="trailing" constant="15" id="ymt-VL-2iX"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="b2U-LA-iqz"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="88" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="g7N-dA-WSg" id="jNb-J9-56Z"/>
+                                            <outlet property="temperatureLabel" destination="upM-xf-qqt" id="7ce-2F-Csl"/>
+                                            <outlet property="weatherIcon" destination="yvw-hk-LiM" id="KCy-X4-DY8"/>
+                                            <outlet property="weatherTextLabel" destination="J1c-hJ-R5K" id="6i9-px-GX4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="wqN-i9-bew"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstAttribute="centerY" secondItem="LTx-hQ-z0w" secondAttribute="centerY" id="BAt-ep-SVn"/>
+                            <constraint firstAttribute="trailing" secondItem="Nqn-kN-WZP" secondAttribute="trailing" id="BS0-nB-I6I"/>
+                            <constraint firstAttribute="centerX" secondItem="LTx-hQ-z0w" secondAttribute="centerX" id="Xv9-Oc-veq"/>
+                            <constraint firstItem="Nqn-kN-WZP" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="YgA-7N-rZb"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Nqn-kN-WZP" secondAttribute="bottom" id="YtB-xX-YNb"/>
+                            <constraint firstItem="Nqn-kN-WZP" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="jsF-eH-f26"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Forecast" image="Forecast" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="m3L-GH-yA3"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="LTx-hQ-z0w" id="sJF-BG-jrG"/>
+                        <outlet property="tableView" destination="Nqn-kN-WZP" id="C3R-vn-hOP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

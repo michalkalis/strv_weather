@@ -7,14 +7,11 @@
 //
 
 #import "MKTodayViewController.h"
-#import "MKSettingsViewController.h"
 #import "MKTabBarController.h"
 
 #import "MKWeatherAPIClient.h"
 #import "MKWeather.h"
 #import "MKLocation.h"
-
-#import "NSNotificationCenter+MKOneObserver.h"
 
 static NSString * const MKTodayViewControllerComment = @"Today";
 
@@ -34,10 +31,7 @@ static NSString * const MKTodayViewControllerComment = @"Today";
 @property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windDirectionLabel;
 
-@property (nonatomic) MKWeatherUnitsOfTemperatureType unitsOfTemperature;
-@property (nonatomic) MKWeatherUnitsOfLengthType unitsOfLength;
 @property (nonatomic, strong) MKWeather *currentWeather;
-@property (nonatomic, strong) MKLocation *selectedLocation;
 
 @end
 
@@ -56,51 +50,7 @@ static NSString * const MKTodayViewControllerComment = @"Today";
     [self updateUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self setTypesFromSettings];
-    
-    [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerDidStartUpdatingLocationNotification selector:@selector(locationStartedUpdating:) object:nil];
-    [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification selector:@selector(updateWeatherData:) object:nil];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerDidStartUpdatingLocationNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification object:nil];
-}
-
 #pragma mark - Auxiliary
-
-- (void)setTypesFromSettings {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    // Celsius or Fahrenheit
-    NSNumber *unitOfTemperatureObject = [userDefaults objectForKey:MKSettingsViewControllerUnitsOfTemperatureKey];
-    if (!unitOfTemperatureObject) {
-        self.unitsOfTemperature = MKWeatherUnitsOfTemperatureTypeCelsius;
-        
-        [userDefaults setObject:@(MKWeatherUnitsOfTemperatureTypeCelsius) forKey:MKSettingsViewControllerUnitsOfTemperatureKey];
-        [userDefaults synchronize];
-    }
-    else {
-        self.unitsOfTemperature = [unitOfTemperatureObject integerValue];
-    }
-    
-    // Kilometers or miles
-    NSNumber *unitsOfLengthObject = [userDefaults objectForKey:MKSettingsViewControllerUnitsOfLengthKey];
-    if (!unitsOfLengthObject) {
-        self.unitsOfLength = MKWeatherUnitsOfLengthTypeKilometers;
-        
-        [userDefaults setObject:@(MKWeatherUnitsOfLengthTypeKilometers) forKey:MKSettingsViewControllerUnitsOfLengthKey];
-        [userDefaults synchronize];
-    }
-    else {
-        self.unitsOfLength = [unitsOfLengthObject integerValue];
-    }
-}
 
 - (void)updateUI {
     self.cityLabel.text = [self.selectedLocation concatenateCityAndCountryStrings];
