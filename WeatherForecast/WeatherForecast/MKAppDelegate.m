@@ -7,6 +7,7 @@
 //
 
 #import "MKAppDelegate.h"
+#import "UIColor+MKHexString.h"
 
 @interface MKAppDelegate ()
 
@@ -48,6 +49,11 @@
 - (void)customizeAppearance {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"white_background"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigation_bar_shadow_line"]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:18], NSForegroundColorAttributeName: [UIColor colorWithHexString:@"#333333"]}];
+    
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"white_background"]];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:10], NSForegroundColorAttributeName: [UIColor colorWithHexString:@"#333333"]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:10], NSForegroundColorAttributeName: [UIColor colorWithHexString:@"#2f91ff"]} forState:UIControlStateSelected];
 }
 
 @end

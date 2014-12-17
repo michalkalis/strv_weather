@@ -21,9 +21,11 @@ static NSString * const MKTodayViewControllerComment = @"Today";
 @interface MKTodayViewController ()
 
 // Outlets
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cityLabelCenterXConstraint;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImage;
+@property (weak, nonatomic) IBOutlet UIImageView *currentLocationImage;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
 @property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
@@ -47,6 +49,8 @@ static NSString * const MKTodayViewControllerComment = @"Today";
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Today", MKTodayViewControllerComment);
+    
+    self.cityLabel.adjustsFontSizeToFitWidth = YES;
     
     // Update UI elements with data from web service
     [self updateUI];
@@ -101,6 +105,7 @@ static NSString * const MKTodayViewControllerComment = @"Today";
 - (void)updateUI {
     self.cityLabel.text = [self.selectedLocation concatenateCityAndCountryStrings];
     self.weatherLabel.text = [self.currentWeather weatherStringInUnitsOfTemperature:self.unitsOfTemperature];
+    self.currentLocationImage.hidden = ![self.selectedLocation.isCurrentLocation boolValue];
     self.weatherImage.image = [self.currentWeather weatherImageFromTextualDescription];
     
     self.humidityLabel.text = [self.currentWeather humidityString];
@@ -108,6 +113,9 @@ static NSString * const MKTodayViewControllerComment = @"Today";
     self.pressureLabel.text = [self.currentWeather pressureString];
     self.windSpeedLabel.text = [self.currentWeather windSpeedStringInUnitsOfLength:self.unitsOfLength];
     self.windDirectionLabel.text = self.currentWeather.windDirection;
+    
+    // Adjust horizontal position of city label and location icon in case of current location
+    self.cityLabelCenterXConstraint.constant = [self.selectedLocation.isCurrentLocation boolValue] ? -7 : 0;
 }
 
 - (void)fetchWeatherDataForLocation:(MKLocation *)location {

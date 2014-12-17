@@ -92,6 +92,7 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
         
         MKLocation *locationObject = [[MKCoreDataManager sharedManager] fetchCurrentLocationObject];
         
+        locationObject.isCurrentLocation = @YES;
         
         if (location) {
             locationObject.longitude = [@(location.coordinate.longitude) stringValue];
