@@ -25,7 +25,6 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 @property (nonatomic) MKWeatherUnitsOfTemperatureType unitsOfTemperature;
 
 - (IBAction)dismiss:(id)sender;
-- (IBAction)addLocation:(id)sender;
 
 @end
 
@@ -49,9 +48,6 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 
 - (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addLocation:(id)sender {
 }
 
 #pragma mark - Auxiliary

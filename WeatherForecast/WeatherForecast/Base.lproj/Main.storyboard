@@ -9,6 +9,7 @@
         <mutableArray key="ProximaNova-Light.otf">
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
+            <string>ProximaNova-Light</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Regular.otf">
             <string>ProximaNova-Regular</string>
@@ -354,7 +355,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addLocation:" destination="3hZ-A5-Pzg" eventType="touchUpInside" id="Yj2-Dy-bUw"/>
+                                    <segue destination="P8t-CA-xJy" kind="presentation" id="AAY-Au-0tt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -385,6 +386,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ImM-tB-C8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3101" y="-340"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VI3-TY-rlI">
+            <objects>
+                <navigationController id="P8t-CA-xJy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ozQ-y0-bhz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VWz-dT-T3P" kind="relationship" relationship="rootViewController" id="Hbe-fw-NKR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5b-IC-m5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3860" y="-340"/>
+        </scene>
+        <!--Add Location View Controller-->
+        <scene sceneID="cTy-ZX-7gn">
+            <objects>
+                <viewController id="VWz-dT-T3P" customClass="MKAddLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gbg-9y-jY4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZBY-w2-VFn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4p3-Yb-zr7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MlZ-1q-vNH">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="18" reuseIdentifier="MKAddLocationViewControllerCellIdentifier" textLabel="7UR-1b-geA" style="IBUITableViewCellStyleDefault" id="agE-Wf-Jbg">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="agE-Wf-Jbg" id="Kwe-qT-OfM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7UR-1b-geA">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZBY-w2-VFn" firstAttribute="top" secondItem="MlZ-1q-vNH" secondAttribute="bottom" id="893-d9-rDL"/>
+                            <constraint firstItem="MlZ-1q-vNH" firstAttribute="leading" secondItem="4p3-Yb-zr7" secondAttribute="leading" id="foI-5S-Qem"/>
+                            <constraint firstAttribute="trailing" secondItem="MlZ-1q-vNH" secondAttribute="trailing" id="qbr-kq-gWo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MlZ-1q-vNH" secondAttribute="trailing" constant="-16" id="vTd-ux-09t"/>
+                            <constraint firstItem="MlZ-1q-vNH" firstAttribute="top" secondItem="gbg-9y-jY4" secondAttribute="bottom" id="wy0-Zb-OpZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vTd-ux-09t"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="boK-tH-1cd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mBb-LP-c6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4619" y="-340"/>
         </scene>
         <!--Forecast-->
         <scene sceneID="d30-eg-nY5">
