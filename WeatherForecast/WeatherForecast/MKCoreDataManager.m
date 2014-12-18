@@ -13,7 +13,6 @@
 @implementation MKCoreDataManager
 
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize inMemoryManagedObjectContext = _inMemmoryManagedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
@@ -96,19 +95,6 @@
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;
-}
-
-- (NSManagedObjectContext *)inMemoryManagedObjectContext {
-    if (_inMemmoryManagedObjectContext != nil) {
-        return _inMemmoryManagedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil) {
-        _inMemmoryManagedObjectContext = [[NSManagedObjectContext alloc] init];
-        [_inMemmoryManagedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    return _inMemmoryManagedObjectContext;
 }
 
 - (NSManagedObjectModel *)managedObjectModel {

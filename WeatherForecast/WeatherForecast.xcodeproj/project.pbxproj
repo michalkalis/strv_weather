@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6C18626F1A422CDF00A42A68 /* MKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C18626E1A422CDF00A42A68 /* MKViewController.m */; };
-		6C1862731A4238FB00A42A68 /* MKForecastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862721A4238FB00A42A68 /* MKForecastCell.m */; };
+		6C1862731A4238FB00A42A68 /* MKWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862721A4238FB00A42A68 /* MKWeatherCell.m */; };
 		6C1862761A42420300A42A68 /* NSDate+MKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862751A42420300A42A68 /* NSDate+MKUtils.m */; };
 		6C1862791A42471800A42A68 /* UITableView+MKEmptyCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862781A42471800A42A68 /* UITableView+MKEmptyCells.m */; };
+		6C18628E1A43712400A42A68 /* MKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C18628D1A43712400A42A68 /* MKLocationViewController.m */; };
 		6C76CA451A3D98A50053B26A /* MKTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA441A3D98A50053B26A /* MKTodayViewController.m */; };
 		6C76CA481A3D98B40053B26A /* MKForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA471A3D98B40053B26A /* MKForecastViewController.m */; };
 		6C76CA4B1A3D98C00053B26A /* MKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA4A1A3D98C00053B26A /* MKSettingsViewController.m */; };
@@ -53,12 +54,14 @@
 /* Begin PBXFileReference section */
 		6C18626D1A422CDF00A42A68 /* MKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKViewController.h; path = Controllers/MKViewController.h; sourceTree = "<group>"; };
 		6C18626E1A422CDF00A42A68 /* MKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKViewController.m; path = Controllers/MKViewController.m; sourceTree = "<group>"; };
-		6C1862711A4238FB00A42A68 /* MKForecastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKForecastCell.h; path = Views/MKForecastCell.h; sourceTree = "<group>"; };
-		6C1862721A4238FB00A42A68 /* MKForecastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKForecastCell.m; path = Views/MKForecastCell.m; sourceTree = "<group>"; };
+		6C1862711A4238FB00A42A68 /* MKWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKWeatherCell.h; path = Views/MKWeatherCell.h; sourceTree = "<group>"; };
+		6C1862721A4238FB00A42A68 /* MKWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKWeatherCell.m; path = Views/MKWeatherCell.m; sourceTree = "<group>"; };
 		6C1862741A42420300A42A68 /* NSDate+MKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MKUtils.h"; sourceTree = "<group>"; };
 		6C1862751A42420300A42A68 /* NSDate+MKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MKUtils.m"; sourceTree = "<group>"; };
 		6C1862771A42471800A42A68 /* UITableView+MKEmptyCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+MKEmptyCells.h"; path = "Utilities/Categories/UITableView+MKEmptyCells.h"; sourceTree = "<group>"; };
 		6C1862781A42471800A42A68 /* UITableView+MKEmptyCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+MKEmptyCells.m"; path = "Utilities/Categories/UITableView+MKEmptyCells.m"; sourceTree = "<group>"; };
+		6C18628C1A43712400A42A68 /* MKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKLocationViewController.h; path = Controllers/MKLocationViewController.h; sourceTree = "<group>"; };
+		6C18628D1A43712400A42A68 /* MKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKLocationViewController.m; path = Controllers/MKLocationViewController.m; sourceTree = "<group>"; };
 		6C76CA431A3D98A50053B26A /* MKTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKTodayViewController.h; path = Controllers/MKTodayViewController.h; sourceTree = "<group>"; };
 		6C76CA441A3D98A50053B26A /* MKTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKTodayViewController.m; path = Controllers/MKTodayViewController.m; sourceTree = "<group>"; };
 		6C76CA461A3D98B40053B26A /* MKForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKForecastViewController.h; path = Controllers/MKForecastViewController.h; sourceTree = "<group>"; };
@@ -141,8 +144,8 @@
 		6C1862701A4238E000A42A68 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				6C1862711A4238FB00A42A68 /* MKForecastCell.h */,
-				6C1862721A4238FB00A42A68 /* MKForecastCell.m */,
+				6C1862711A4238FB00A42A68 /* MKWeatherCell.h */,
+				6C1862721A4238FB00A42A68 /* MKWeatherCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -349,6 +352,8 @@
 			children = (
 				6C76CA461A3D98B40053B26A /* MKForecastViewController.h */,
 				6C76CA471A3D98B40053B26A /* MKForecastViewController.m */,
+				6C18628C1A43712400A42A68 /* MKLocationViewController.h */,
+				6C18628D1A43712400A42A68 /* MKLocationViewController.m */,
 				6C76CA491A3D98C00053B26A /* MKSettingsViewController.h */,
 				6C76CA4A1A3D98C00053B26A /* MKSettingsViewController.m */,
 				6C76CA431A3D98A50053B26A /* MKTodayViewController.h */,
@@ -518,6 +523,7 @@
 				6C76CA5C1A3DC9AC0053B26A /* MKWeather.m in Sources */,
 				6CC3803A1A40E8150001793D /* UIColor+MKHexString.m in Sources */,
 				6C76CA4B1A3D98C00053B26A /* MKSettingsViewController.m in Sources */,
+				6C18628E1A43712400A42A68 /* MKLocationViewController.m in Sources */,
 				6C76CA451A3D98A50053B26A /* MKTodayViewController.m in Sources */,
 				6C18626F1A422CDF00A42A68 /* MKViewController.m in Sources */,
 				6C76CA561A3DC7C70053B26A /* NSObject+MKNullObject.m in Sources */,
@@ -531,7 +537,7 @@
 				6C1862791A42471800A42A68 /* UITableView+MKEmptyCells.m in Sources */,
 				6C76CA481A3D98B40053B26A /* MKForecastViewController.m in Sources */,
 				6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */,
-				6C1862731A4238FB00A42A68 /* MKForecastCell.m in Sources */,
+				6C1862731A4238FB00A42A68 /* MKWeatherCell.m in Sources */,
 				6C76CA521A3DC6360053B26A /* MKWeatherBuilder.m in Sources */,
 				6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */,
 				6C1862761A42420300A42A68 /* NSDate+MKUtils.m in Sources */,

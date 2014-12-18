@@ -18,7 +18,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self setTypesFromSettings];
+    [self updateTypesFromSettings];
     
     [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerDidStartUpdatingLocationNotification selector:@selector(locationStartedUpdating:) object:nil];
     [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification selector:@selector(updateWeatherData:) object:nil];
@@ -33,7 +33,7 @@
 
 #pragma mark - Auxiliary
 
-- (void)setTypesFromSettings {
+- (void)updateTypesFromSettings {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     // Celsius or Fahrenheit

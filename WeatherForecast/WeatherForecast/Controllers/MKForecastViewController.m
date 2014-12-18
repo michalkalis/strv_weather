@@ -9,7 +9,7 @@
 #import "MKForecastViewController.h"
 #import "MKSettingsViewController.h"
 #import "MKTabBarController.h"
-#import "MKForecastCell.h"
+#import "MKWeatherCell.h"
 
 #import "MKCoreDataManager.h"
 #import "MKWeatherAPIClient.h"
@@ -19,7 +19,7 @@
 #import "NSDate+MKUtils.h"
 #import "UITableView+MKEmptyCells.h"
 
-NSString * const MKForecastCellIdentifier = @"MKForecastCellIdentifier";
+static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 
 @interface MKForecastViewController () <UITableViewDataSource>
 
@@ -105,12 +105,12 @@ NSString * const MKForecastCellIdentifier = @"MKForecastCellIdentifier";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MKForecastCell *cell = [tableView dequeueReusableCellWithIdentifier:MKForecastCellIdentifier];
+    MKWeatherCell *cell = [tableView dequeueReusableCellWithIdentifier:MKWeatherCellIdentifier];
     
     MKWeather *weather = self.sortedForecasts[indexPath.row];
     
     cell.weatherIcon.image = [weather weatherImageFromTextualDescription];
-    cell.dayLabel.text = [weather.date weekDayDescription];
+    cell.titleLabel.text = [weather.date weekDayDescription];
     cell.weatherTextLabel.text = weather.textualDescription;
     cell.temperatureLabel.text = [weather temperatureWithDegreesInUnitsOfTemperature:self.unitsOfTemperature];
     

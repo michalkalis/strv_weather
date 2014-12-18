@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 strv. All rights reserved.
 //
 
-#import "MKForecastCell.h"
+#import "MKWeatherCell.h"
 
-@implementation MKForecastCell
+@implementation MKWeatherCell
 
 @end

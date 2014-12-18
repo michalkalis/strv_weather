@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MKForecastCell : UITableViewCell
+@interface MKWeatherCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
-@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *currentLocationImage;
 
 @end
