@@ -41,7 +41,14 @@ NSString * const MKForecastCellIdentifier = @"MKForecastCellIdentifier";
     self.selectedLocation = [[MKCoreDataManager sharedManager] fetchCurrentLocationObject];
     
     self.sortedForecasts = [self sortForecasts];
+    
     [self updateTitle];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Auxiliary

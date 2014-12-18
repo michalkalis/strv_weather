@@ -40,9 +40,6 @@
     NSNumber *unitOfTemperatureObject = [userDefaults objectForKey:MKSettingsViewControllerUnitsOfTemperatureKey];
     if (!unitOfTemperatureObject) {
         self.unitsOfTemperature = MKWeatherUnitsOfTemperatureTypeCelsius;
-        
-        [userDefaults setObject:@(MKWeatherUnitsOfTemperatureTypeCelsius) forKey:MKSettingsViewControllerUnitsOfTemperatureKey];
-        [userDefaults synchronize];
     }
     else {
         self.unitsOfTemperature = [unitOfTemperatureObject integerValue];
@@ -52,9 +49,6 @@
     NSNumber *unitsOfLengthObject = [userDefaults objectForKey:MKSettingsViewControllerUnitsOfLengthKey];
     if (!unitsOfLengthObject) {
         self.unitsOfLength = MKWeatherUnitsOfLengthTypeKilometers;
-        
-        [userDefaults setObject:@(MKWeatherUnitsOfLengthTypeKilometers) forKey:MKSettingsViewControllerUnitsOfLengthKey];
-        [userDefaults synchronize];
     }
     else {
         self.unitsOfLength = [unitsOfLengthObject integerValue];

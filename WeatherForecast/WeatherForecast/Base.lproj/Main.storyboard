@@ -12,8 +12,13 @@
         <mutableArray key="ProximaNova-Regular.otf">
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
@@ -256,7 +261,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LTx-hQ-z0w">
                                 <rect key="frame" x="282" y="282" width="37" height="37"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nqn-kN-WZP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="91" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nqn-kN-WZP">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -374,10 +379,110 @@
                     <view key="view" contentMode="scaleToFill" id="Pfs-do-F7y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUv-KF-SQM" userLabel="separator line top">
+                                <rect key="frame" x="0.0" y="123" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="4dS-fB-7ix"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4q-uq-WeV" userLabel="separator line middle">
+                                <rect key="frame" x="15" y="168" width="585" height="1"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="2zh-27-Vqd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cii-xD-uHf" userLabel="separator line bottom">
+                                <rect key="frame" x="0.0" y="213" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="wZC-3p-Ns7"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit of length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89I-Lv-eai">
+                                <rect key="frame" x="16" y="139" width="101" height="17"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units of temperature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkd-6N-hA9">
+                                <rect key="frame" x="15" y="184" width="154" height="17"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-AO-J63">
+                                <rect key="frame" x="457" y="133" width="128" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="x7E-yx-BdH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                <state key="normal" title="Meters">
+                                    <color key="titleColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeUnitsOfLength:" destination="zXb-9H-7NW" eventType="touchUpInside" id="WqD-9H-eTC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loa-f0-gXu">
+                                <rect key="frame" x="457" y="178" width="127" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="YWA-9Y-bBw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                <state key="normal" title="Celsius">
+                                    <color key="titleColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeUnitsOfTemperature:" destination="zXb-9H-7NW" eventType="touchUpInside" id="qW4-7k-aMF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENERAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUw-sz-dKE">
+                                <rect key="frame" x="16" y="95" width="62" height="14"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
+                                <color key="textColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="loa-f0-gXu" firstAttribute="top" secondItem="T4q-uq-WeV" secondAttribute="bottom" constant="9" id="Bjw-OJ-GTp"/>
+                            <constraint firstItem="Jkd-6N-hA9" firstAttribute="leading" secondItem="Pfs-do-F7y" secondAttribute="leading" constant="15" id="Cph-5g-lq3"/>
+                            <constraint firstItem="Jkd-6N-hA9" firstAttribute="top" secondItem="T4q-uq-WeV" secondAttribute="bottom" constant="15" id="Faa-Ic-Hi5"/>
+                            <constraint firstItem="nUw-sz-dKE" firstAttribute="leading" secondItem="Pfs-do-F7y" secondAttribute="leading" constant="16" id="HHg-m4-YmC"/>
+                            <constraint firstAttribute="centerX" secondItem="NUv-KF-SQM" secondAttribute="centerX" id="Mtn-PS-tsA"/>
+                            <constraint firstItem="89I-Lv-eai" firstAttribute="top" secondItem="NUv-KF-SQM" secondAttribute="bottom" constant="15" id="OQm-B6-gvS"/>
+                            <constraint firstAttribute="trailing" secondItem="loa-f0-gXu" secondAttribute="trailing" constant="16" id="QrZ-Zr-19c"/>
+                            <constraint firstItem="NUv-KF-SQM" firstAttribute="top" secondItem="nUw-sz-dKE" secondAttribute="bottom" constant="14" id="S9z-oq-w2L"/>
+                            <constraint firstAttribute="trailing" secondItem="T4q-uq-WeV" secondAttribute="trailing" id="Tvh-4W-tVq"/>
+                            <constraint firstItem="0VO-AO-J63" firstAttribute="top" secondItem="NUv-KF-SQM" secondAttribute="bottom" constant="9" id="V1m-Xv-BbZ"/>
+                            <constraint firstItem="nUw-sz-dKE" firstAttribute="top" secondItem="vsk-re-SAN" secondAttribute="bottom" constant="31" id="Z6K-lw-GEs"/>
+                            <constraint firstItem="cii-xD-uHf" firstAttribute="top" secondItem="T4q-uq-WeV" secondAttribute="bottom" constant="44" id="bI3-eE-hg8"/>
+                            <constraint firstAttribute="centerX" secondItem="T4q-uq-WeV" secondAttribute="centerX" id="bpP-ia-vll"/>
+                            <constraint firstItem="NUv-KF-SQM" firstAttribute="leading" secondItem="Pfs-do-F7y" secondAttribute="leading" id="cSC-du-g2f"/>
+                            <constraint firstItem="89I-Lv-eai" firstAttribute="leading" secondItem="Pfs-do-F7y" secondAttribute="leading" constant="16" id="cmm-v0-9Ub"/>
+                            <constraint firstItem="T4q-uq-WeV" firstAttribute="top" secondItem="NUv-KF-SQM" secondAttribute="bottom" constant="44" id="kYA-b9-fqP"/>
+                            <constraint firstAttribute="centerX" secondItem="cii-xD-uHf" secondAttribute="centerX" id="q1v-ag-7Lh"/>
+                            <constraint firstItem="T4q-uq-WeV" firstAttribute="leading" secondItem="Pfs-do-F7y" secondAttribute="leading" constant="15" id="qQC-bH-ihc"/>
+                            <constraint firstItem="cii-xD-uHf" firstAttribute="leading" secondItem="Pfs-do-F7y" secondAttribute="leading" id="swL-Lu-cW3"/>
+                            <constraint firstAttribute="trailing" secondItem="0VO-AO-J63" secondAttribute="trailing" constant="15" id="xrt-4D-m9w"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bpP-ia-vll"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="cuB-qq-Idh"/>
                     <navigationItem key="navigationItem" id="WTx-ss-xgQ"/>
+                    <connections>
+                        <outlet property="unitsOfLengthButton" destination="0VO-AO-J63" id="P0w-Ue-Ckd"/>
+                        <outlet property="unitsOfTemperatureButton" destination="loa-f0-gXu" id="T1G-g6-fDx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D22-dG-T6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

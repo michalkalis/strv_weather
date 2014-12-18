@@ -13,7 +13,7 @@
 #import "MKWeather.h"
 #import "MKLocation.h"
 
-static NSString * const MKTodayViewControllerComment = @"Today";
+static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 
 @interface MKTodayViewController ()
 
@@ -42,11 +42,14 @@ static NSString * const MKTodayViewControllerComment = @"Today";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"Today", MKTodayViewControllerComment);
+    self.title = NSLocalizedString(@"Today", MKTodayViewControllerLocalizedComment);
     
     self.cityLabel.adjustsFontSizeToFitWidth = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    // Update UI elements with data from web service
     [self updateUI];
 }
 
