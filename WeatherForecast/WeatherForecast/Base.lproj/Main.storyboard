@@ -34,11 +34,11 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Today-->
+        <!--Navigation Controller-->
         <scene sceneID="uEy-Ly-Mpa">
             <objects>
                 <navigationController id="CHx-D9-JTB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" image="Today" selectedImage="Today" id="YiW-RN-Mbj"/>
+                    <tabBarItem key="tabBarItem" title="" id="YiW-RN-Mbj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0jw-uO-yq0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="826" y="-680"/>
         </scene>
-        <!--Today-->
+        <!--Today View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MKTodayViewController" sceneMemberID="viewController">
@@ -212,7 +212,6 @@
                             <constraint firstAttribute="centerY" secondItem="kLx-Fd-G3V" secondAttribute="centerY" constant="0.5" id="cEI-kE-xW7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" image="Today" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="36G-qA-1U2">
                         <barButtonItem key="rightBarButtonItem" image="Location" id="UmM-fq-5nT">
                             <connections>
@@ -457,11 +456,11 @@
             </objects>
             <point key="canvasLocation" x="4619" y="-340"/>
         </scene>
-        <!--Forecast-->
+        <!--Navigation Controller-->
         <scene sceneID="d30-eg-nY5">
             <objects>
                 <navigationController id="JWC-nP-jB1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Forecast" image="Forecast" selectedImage="Forecast" id="u7d-Ww-LUn"/>
+                    <tabBarItem key="tabBarItem" title="" id="u7d-Ww-LUn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cDR-vV-fCa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -474,7 +473,7 @@
             </objects>
             <point key="canvasLocation" x="826" y="0.0"/>
         </scene>
-        <!--Forecast-->
+        <!--Forecast View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="MKForecastViewController" sceneMemberID="viewController">
@@ -568,7 +567,6 @@
                             <constraint firstItem="Nqn-kN-WZP" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="jsF-eH-f26"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Forecast" image="Forecast" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="m3L-GH-yA3">
                         <barButtonItem key="rightBarButtonItem" image="Location" id="TTX-yJ-0wU">
                             <connections>
@@ -585,11 +583,11 @@
             </objects>
             <point key="canvasLocation" x="1578" y="0.0"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="41J-3n-0IR">
             <objects>
                 <navigationController id="dIS-eO-1ik" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings" id="rjq-sm-80e"/>
+                    <tabBarItem key="tabBarItem" title="" id="rjq-sm-80e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iI1-73-9cL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -602,7 +600,7 @@
             </objects>
             <point key="canvasLocation" x="826" y="690"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="I27-42-SCc">
             <objects>
                 <viewController id="zXb-9H-7NW" customClass="MKSettingsViewController" sceneMemberID="viewController">
@@ -711,7 +709,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="cuB-qq-Idh"/>
                     <navigationItem key="navigationItem" id="WTx-ss-xgQ"/>
                     <connections>
                         <outlet property="unitsOfLengthButton" destination="0VO-AO-J63" id="P0w-Ue-Ckd"/>
@@ -750,12 +747,9 @@
         <image name="Compass" width="17" height="17"/>
         <image name="Current" width="11" height="11"/>
         <image name="Divider" width="127" height="1"/>
-        <image name="Forecast" width="23" height="22"/>
         <image name="Location" width="22" height="14"/>
         <image name="Rain" width="16" height="19"/>
-        <image name="Settings" width="23" height="23"/>
         <image name="Sun_Big" width="87" height="87"/>
-        <image name="Today" width="24" height="24"/>
         <image name="White-Overlay" width="320" height="195"/>
         <image name="Wind" width="25" height="16"/>
     </resources>

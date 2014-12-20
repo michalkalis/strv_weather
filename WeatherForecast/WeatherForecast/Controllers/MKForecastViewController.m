@@ -33,6 +33,21 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 
 @implementation MKForecastViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        // Needs to be set programmatically as it's not working via IB
+        UIImage *image = [[UIImage imageNamed:@"Forecast"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *imageSel = [[UIImage imageNamed:@"Forecast_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UITabBarItem *forecastTabItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Forecast", @"General") image:image selectedImage:imageSel];
+        
+        self.tabBarItem = forecastTabItem;
+    }
+    
+    return self;
+}
+
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -60,7 +75,7 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 }
 
 - (void)updateTitle {
-    self.title = self.selectedLocation.city;
+    [self.navigationItem setTitle:self.selectedLocation.city];
 }
 
 - (void)showActivityIndicator {

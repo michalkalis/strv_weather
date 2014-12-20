@@ -37,6 +37,19 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 
 @implementation MKTodayViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        // Needs to be set programmatically as it's not working via IB
+        UIImage *image = [[UIImage imageNamed:@"Today"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *imageSel = [[UIImage imageNamed:@"Today_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UITabBarItem *todayTabItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Today", @"General") image:image selectedImage:imageSel];
+        
+        self.tabBarItem = todayTabItem;
+    }
+    
+    return self;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
