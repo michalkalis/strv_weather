@@ -22,6 +22,8 @@
 
 - (void)saveContext;
 - (MKLocation *)fetchCurrentLocationObject;
-- (BOOL)deleteAllObjectOfEntity:(NSString *)entity;
+- (MKLocation *)fetchSelectedLocationObject;
+- (NSArray *)fetchAllStoredLocations;
+- (BOOL)deleteAllWeatherObjectsForLocation:(MKLocation *)location;
 
 @end

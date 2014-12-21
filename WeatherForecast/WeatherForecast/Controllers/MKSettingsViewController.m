@@ -32,6 +32,21 @@ NSString * const MKSettingsViewControllerUnitsOfTemperatureFahrenheit = @"Fahren
 
 @implementation MKSettingsViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        // Needs to be set programmatically as it's not working via IB
+        UIImage *image = [[UIImage imageNamed:@"Settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *imageSel = [[UIImage imageNamed:@"Settings_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UITabBarItem *settingsTabItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Settings", @"General") image:image selectedImage:imageSel];
+        
+        self.tabBarItem = settingsTabItem;
+    }
+    
+    return self;
+}
+
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

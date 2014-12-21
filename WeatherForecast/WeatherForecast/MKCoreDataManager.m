@@ -36,10 +36,50 @@
     }
 }
 
+- (NSArray *)fetchAllStoredLocations {
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSFetchRequest *currentLocationRequest = [[NSFetchRequest alloc] init];
+    [currentLocationRequest setEntity:[NSEntityDescription entityForName:NSStringFromClass([MKLocation class]) inManagedObjectContext:context]];
+    currentLocationRequest.predicate = [NSPredicate predicateWithFormat:@"isCurrentLocation == %@", @NO];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:currentLocationRequest error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    
+    return objects;
+}
+
+- (MKLocation *)fetchSelectedLocationObject {
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSFetchRequest *currentLocationRequest = [[NSFetchRequest alloc] init];
+    [currentLocationRequest setEntity:[NSEntityDescription entityForName:NSStringFromClass([MKLocation class]) inManagedObjectContext:context]];
+    currentLocationRequest.predicate = [NSPredicate predicateWithFormat:@"isSelected == %@", @YES];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:currentLocationRequest error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    
+    MKLocation *locationObject;
+    if (objects.count == 0) {
+        locationObject = [[MKLocation alloc] initWithContext:[MKCoreDataManager sharedManager].managedObjectContext];
+    }
+    else {
+        locationObject = objects.firstObject;
+    }
+    
+    return locationObject;
+}
+
 - (MKLocation *)fetchCurrentLocationObject {
     NSManagedObjectContext *context = self.managedObjectContext;
     NSFetchRequest *currentLocationRequest = [[NSFetchRequest alloc] init];
-    [currentLocationRequest setEntity:[NSEntityDescription entityForName:@"MKLocation" inManagedObjectContext:context]];
+    [currentLocationRequest setEntity:[NSEntityDescription entityForName:NSStringFromClass([MKLocation class]) inManagedObjectContext:context]];
     currentLocationRequest.predicate = [NSPredicate predicateWithFormat:@"isCurrentLocation == %@", @YES];
     
     NSError *error;
@@ -60,21 +100,14 @@
     return locationObject;
 }
 
-- (BOOL)deleteAllObjectOfEntity:(NSString *)entity {
+- (BOOL)deleteAllWeatherObjectsForLocation:(MKLocation *)location {
     NSManagedObjectContext *context = self.managedObjectContext;
-    NSFetchRequest *allObjects = [[NSFetchRequest alloc] init];
-    [allObjects setEntity:[NSEntityDescription entityForName:entity inManagedObjectContext:context]];
-    [allObjects setIncludesPropertyValues:NO]; //only fetch the managedObjectID
     
-    NSError *error = nil;
-    NSArray *objects = [context executeFetchRequest:allObjects error:&error];
-    
-    if (error != nil) {
-        return NO;
-    }
-    
-    for (NSManagedObject *o in objects) {
+    for (NSManagedObject *o in location.forecasts) {
         [context deleteObject:o];
+    }
+    if (location.currentWeather) {
+        [context deleteObject:(NSManagedObject *)location.currentWeather];
     }
     
     [[MKCoreDataManager sharedManager] saveContext];

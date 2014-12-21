@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKWeather.h"
+
+@class MKLocation;
 
 @interface MKWeatherCell : UITableViewCell
 
@@ -15,5 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *weatherTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *currentLocationImage;
+
+@property (nonatomic, weak) MKLocation *location;
+@property (nonatomic) MKWeatherUnitsOfTemperatureType unitsOfTemperature;
 
 @end

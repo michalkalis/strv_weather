@@ -12,6 +12,7 @@
 		6C1862761A42420300A42A68 /* NSDate+MKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862751A42420300A42A68 /* NSDate+MKUtils.m */; };
 		6C1862791A42471800A42A68 /* UITableView+MKEmptyCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862781A42471800A42A68 /* UITableView+MKEmptyCells.m */; };
 		6C18628E1A43712400A42A68 /* MKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C18628D1A43712400A42A68 /* MKLocationViewController.m */; };
+		6C1862911A43798300A42A68 /* MKAddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862901A43798300A42A68 /* MKAddLocationViewController.m */; };
 		6C76CA451A3D98A50053B26A /* MKTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA441A3D98A50053B26A /* MKTodayViewController.m */; };
 		6C76CA481A3D98B40053B26A /* MKForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA471A3D98B40053B26A /* MKForecastViewController.m */; };
 		6C76CA4B1A3D98C00053B26A /* MKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA4A1A3D98C00053B26A /* MKSettingsViewController.m */; };
@@ -36,6 +37,7 @@
 		6CD8B6901A3C64D300B8B28D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD8B68F1A3C64D300B8B28D /* CoreData.framework */; };
 		6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */; };
 		6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69F1A3C685F00B8B28D /* CoreDataModel.xcdatamodeld */; };
+		6CDEF0D61A47759900CC4210 /* MKLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */; };
 		6CE06CED1A40A973004804C5 /* MKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE06CEC1A40A973004804C5 /* MKTabBarController.m */; };
 		6CE06CF31A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE06CF21A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m */; };
 		C55316631457E564435E1C0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B88358BF6B4D58BC3B3D55 /* libPods.a */; };
@@ -62,6 +64,8 @@
 		6C1862781A42471800A42A68 /* UITableView+MKEmptyCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+MKEmptyCells.m"; path = "Utilities/Categories/UITableView+MKEmptyCells.m"; sourceTree = "<group>"; };
 		6C18628C1A43712400A42A68 /* MKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKLocationViewController.h; path = Controllers/MKLocationViewController.h; sourceTree = "<group>"; };
 		6C18628D1A43712400A42A68 /* MKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKLocationViewController.m; path = Controllers/MKLocationViewController.m; sourceTree = "<group>"; };
+		6C18628F1A43798300A42A68 /* MKAddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKAddLocationViewController.h; path = Controllers/MKAddLocationViewController.h; sourceTree = "<group>"; };
+		6C1862901A43798300A42A68 /* MKAddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKAddLocationViewController.m; path = Controllers/MKAddLocationViewController.m; sourceTree = "<group>"; };
 		6C76CA431A3D98A50053B26A /* MKTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKTodayViewController.h; path = Controllers/MKTodayViewController.h; sourceTree = "<group>"; };
 		6C76CA441A3D98A50053B26A /* MKTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKTodayViewController.m; path = Controllers/MKTodayViewController.m; sourceTree = "<group>"; };
 		6C76CA461A3D98B40053B26A /* MKForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKForecastViewController.h; path = Controllers/MKForecastViewController.h; sourceTree = "<group>"; };
@@ -103,6 +107,9 @@
 		6CD8B69C1A3C677900B8B28D /* MKCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCoreDataManager.h; sourceTree = "<group>"; };
 		6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCoreDataManager.m; sourceTree = "<group>"; };
 		6CD8B6A01A3C685F00B8B28D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6CDEF0D01A4710CE00CC4210 /* MKAddLocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKAddLocationDelegate.h; path = Controllers/MKAddLocationDelegate.h; sourceTree = "<group>"; };
+		6CDEF0D41A47759900CC4210 /* MKLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLocationBuilder.h; sourceTree = "<group>"; };
+		6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLocationBuilder.m; sourceTree = "<group>"; };
 		6CE06CEB1A40A973004804C5 /* MKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKTabBarController.h; path = Controllers/MKTabBarController.h; sourceTree = "<group>"; };
 		6CE06CEC1A40A973004804C5 /* MKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKTabBarController.m; path = Controllers/MKTabBarController.m; sourceTree = "<group>"; };
 		6CE06CF11A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+MKOneObserver.h"; path = "Utilities/Categories/NSNotificationCenter+MKOneObserver.h"; sourceTree = "<group>"; };
@@ -153,6 +160,8 @@
 		6C76CA4C1A3D9D160053B26A /* REST */ = {
 			isa = PBXGroup;
 			children = (
+				6CDEF0D41A47759900CC4210 /* MKLocationBuilder.h */,
+				6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */,
 				6C76CA4D1A3D9D520053B26A /* MKWeatherAPIClient.h */,
 				6C76CA4E1A3D9D520053B26A /* MKWeatherAPIClient.m */,
 				6C76CA501A3DC6360053B26A /* MKWeatherBuilder.h */,
@@ -350,6 +359,9 @@
 		6CF84F281A3F6E8C00C3A624 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				6CDEF0D01A4710CE00CC4210 /* MKAddLocationDelegate.h */,
+				6C18628F1A43798300A42A68 /* MKAddLocationViewController.h */,
+				6C1862901A43798300A42A68 /* MKAddLocationViewController.m */,
 				6C76CA461A3D98B40053B26A /* MKForecastViewController.h */,
 				6C76CA471A3D98B40053B26A /* MKForecastViewController.m */,
 				6C18628C1A43712400A42A68 /* MKLocationViewController.h */,
@@ -539,8 +551,10 @@
 				6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */,
 				6C1862731A4238FB00A42A68 /* MKWeatherCell.m in Sources */,
 				6C76CA521A3DC6360053B26A /* MKWeatherBuilder.m in Sources */,
+				6C1862911A43798300A42A68 /* MKAddLocationViewController.m in Sources */,
 				6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */,
 				6C1862761A42420300A42A68 /* NSDate+MKUtils.m in Sources */,
+				6CDEF0D61A47759900CC4210 /* MKLocationBuilder.m in Sources */,
 				6CD8B6631A3C456C00B8B28D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

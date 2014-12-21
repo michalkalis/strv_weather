@@ -47,13 +47,22 @@
 #pragma mark - Auxiliary
 
 - (void)customizeAppearance {
+    // Navigation bar
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"white_background"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigation_bar_shadow_line"]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:18], NSForegroundColorAttributeName: [UIColor colorWithHexString:@"#333333"]}];
     
+    // Tab bar
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"white_background"]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:10], NSForegroundColorAttributeName: [UIColor colorWithHexString:@"#333333"]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"ProximaNova-Semibold" size:10], NSForegroundColorAttributeName: [UIColor colorWithHexString:@"#2f91ff"]} forState:UIControlStateSelected];
+    
+    // Search bar
+    [[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"Input"] forState:UIControlStateNormal];
+    [[UISearchBar appearance] setImage:[UIImage imageNamed:@"Search"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    [[UISearchBar appearance] setImage:[UIImage imageNamed:@"Close"] forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor colorWithHexString:@"#2f91ff"]];
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTintColor:[UIColor colorWithHexString:@"#2f91ff"]];
 }
 
 @end

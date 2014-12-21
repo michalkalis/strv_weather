@@ -8,6 +8,7 @@
 
 #import "MKTodayViewController.h"
 #import "MKTabBarController.h"
+#import "MKCoreDataManager.h"
 
 #import "MKWeatherAPIClient.h"
 #import "MKWeather.h"
@@ -30,6 +31,7 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 @property (weak, nonatomic) IBOutlet UILabel *pressureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windDirectionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationNotAvailableLabel;
 
 @property (nonatomic, strong) MKWeather *currentWeather;
 
@@ -37,18 +39,31 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 
 @implementation MKTodayViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        // Needs to be set programmatically as it's not working via IB
+        UIImage *image = [[UIImage imageNamed:@"Today"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *imageSel = [[UIImage imageNamed:@"Today_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UITabBarItem *todayTabItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Today", @"General") image:image selectedImage:imageSel];
+        
+        self.tabBarItem = todayTabItem;
+    }
+    
+    return self;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Today", MKTodayViewControllerLocalizedComment);
-    
-    self.cityLabel.adjustsFontSizeToFitWidth = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    self.selectedLocation = [[MKCoreDataManager sharedManager] fetchSelectedLocationObject];
     
     [self updateUI];
 }
@@ -69,9 +84,11 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
     
     // Adjust horizontal position of city label and location icon in case of current location
     self.cityLabelCenterXConstraint.constant = [self.selectedLocation.isCurrentLocation boolValue] ? -7 : 0;
+    
+    self.cityLabel.adjustsFontSizeToFitWidth = YES;
 }
 
-- (void)fetchWeatherDataForLocation:(MKLocation *)location {
+- (void)fetchWeatherDataAtLocation:(MKLocation *)location {
     [[MKWeatherAPIClient sharedClient] fetchWeatherDataAtLocation:location withBlock:^(MKLocation *location, NSError *error) {
         self.currentWeather = location.currentWeather;
         
@@ -81,6 +98,7 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 
 - (void)showActivityIndicator {
     self.containerView.hidden = YES;
+    self.locationNotAvailableLabel.hidden = YES;
     self.activityIndicator.hidden = NO;
     
     [self.activityIndicator startAnimating];
@@ -99,8 +117,24 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
     [self showActivityIndicator];
 }
 
+- (void)locationGettingFailed:(NSNotification *)__unused notification {
+    [self hideActivityIndicator];
+    
+    NSArray *locationObjects = [[MKCoreDataManager sharedManager] fetchAllStoredLocations];
+    if (locationObjects && locationObjects.count > 0) {
+        self.selectedLocation = locationObjects.firstObject;
+    }
+    else {
+        self.locationNotAvailableLabel.hidden = NO;
+        self.containerView.hidden = YES;
+    }
+}
+
 - (void)updateWeatherData:(NSNotification *)notification {
     [self hideActivityIndicator];
+    
+    self.locationNotAvailableLabel.hidden = YES;
+    self.containerView.hidden = NO;
     
     MKLocation *location = notification.object;
     self.selectedLocation = location;

@@ -33,22 +33,34 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 
 @implementation MKForecastViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        // Needs to be set programmatically as it's not working via IB
+        UIImage *image = [[UIImage imageNamed:@"Forecast"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *imageSel = [[UIImage imageNamed:@"Forecast_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UITabBarItem *forecastTabItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Forecast", @"General") image:image selectedImage:imageSel];
+        
+        self.tabBarItem = forecastTabItem;
+    }
+    
+    return self;
+}
+
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.tableView hideEmptyCells];
-    
-    self.selectedLocation = [[MKCoreDataManager sharedManager] fetchCurrentLocationObject];
-    
-    self.sortedForecasts = [self sortForecasts];
-    
-    [self updateTitle];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.tableView reloadData];
+    self.selectedLocation = [[MKCoreDataManager sharedManager] fetchSelectedLocationObject];
+    self.sortedForecasts = [self sortForecasts];
+    
+    [self updateUI];
 }
 
 #pragma mark - Auxiliary
@@ -60,7 +72,7 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 }
 
 - (void)updateTitle {
-    self.title = self.selectedLocation.city;
+    [self.navigationItem setTitle:self.selectedLocation.city];
 }
 
 - (void)showActivityIndicator {
@@ -77,6 +89,11 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     [self.activityIndicator stopAnimating];
 }
 
+- (void)updateUI {
+    [self.tableView reloadData];
+    [self updateTitle];
+}
+
 #pragma mark - Notifications
 
 - (void)locationStartedUpdating:(NSNotification *)__unused notification {
@@ -89,9 +106,14 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     MKLocation *location = notification.object;
     self.selectedLocation = location;
     
-    [self.tableView reloadData];
     self.sortedForecasts = [self sortForecasts];
-    [self updateTitle];
+    [self updateUI];
+}
+
+- (void)didSelectLocation:(NSNotification *)notification {
+    self.selectedLocation = notification.object;;
+    
+    [self updateUI];
 }
 
 #pragma mark - Table view data source
