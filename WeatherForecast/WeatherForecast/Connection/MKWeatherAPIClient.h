@@ -19,5 +19,6 @@ UIKIT_EXTERN NSString * const MKWeatherAPIClientKey;
 + (instancetype)sharedClient;
 
 - (NSURLSessionDataTask *)fetchWeatherDataAtLocation:(MKLocation *)location withBlock:(void (^)(MKLocation *location, NSError *error))block;
+- (NSURLSessionDataTask *)searchLocationsWithText:(NSString *)text withBlock:(void (^)(NSArray *locations, NSError *error))block;
 
 @end

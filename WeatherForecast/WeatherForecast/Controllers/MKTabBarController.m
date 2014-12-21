@@ -13,6 +13,7 @@
 #import "MKWeather.h"
 
 NSString * const MKTabBarControllerDidStartUpdatingLocationNotification = @"MKTabBarControllerDidStartUpdatingLocationNotification";
+NSString * const MKTabBarControllerFailedGettingLocationNotification = @"MKTabBarControllerFailedGettingLocationNotification";
 NSString * const MKTabBarControllerDidFetchWeatherDataNotification = @"MKTabBarControllerDidFetchWeatherDataNotification";
 
 NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
@@ -45,6 +46,10 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
     [[NSNotificationCenter defaultCenter] postNotificationName:MKTabBarControllerDidStartUpdatingLocationNotification object:nil];
 }
 
+- (void)postLocationGettingFailedNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:MKTabBarControllerFailedGettingLocationNotification object:nil];
+}
+
 #pragma mark - Location
 
 - (void)updateLocation {
@@ -70,6 +75,8 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
 }
 
 - (void)stopGettingLocation {
+    [self postLocationGettingFailedNotification];
+    
     [self.locationManager stopUpdatingLocation];
     self.locationManager.delegate = nil; // Delegate still send one more message although is stopped
 }
@@ -77,13 +84,22 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
 #pragma mark - Core location delegate
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+#ifdef DEBUG
+    NSLog(@"Changed location authorization status: %d", status);
+#endif
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorized || status == kCLAuthorizationStatusRestricted) {
         [self postLocationUpdatingStartNotification];
         [self.locationManager startUpdatingLocation];
     }
+    else {
+        [self postLocationGettingFailedNotification];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+#ifdef DEBUG
+    NSLog(@"Did update locations");
+#endif
     CLLocation *location = locations.lastObject;
     
     if (location.horizontalAccuracy < 100.0) {

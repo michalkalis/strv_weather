@@ -52,18 +52,15 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     [super viewDidLoad];
     
     [self.tableView hideEmptyCells];
-    
-    self.selectedLocation = [[MKCoreDataManager sharedManager] fetchCurrentLocationObject];
-    
-    self.sortedForecasts = [self sortForecasts];
-    
-    [self updateTitle];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.tableView reloadData];
+    self.selectedLocation = [[MKCoreDataManager sharedManager] fetchSelectedLocationObject];
+    self.sortedForecasts = [self sortForecasts];
+    
+    [self updateUI];
 }
 
 #pragma mark - Auxiliary
@@ -92,6 +89,11 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     [self.activityIndicator stopAnimating];
 }
 
+- (void)updateUI {
+    [self.tableView reloadData];
+    [self updateTitle];
+}
+
 #pragma mark - Notifications
 
 - (void)locationStartedUpdating:(NSNotification *)__unused notification {
@@ -104,9 +106,14 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     MKLocation *location = notification.object;
     self.selectedLocation = location;
     
-    [self.tableView reloadData];
     self.sortedForecasts = [self sortForecasts];
-    [self updateTitle];
+    [self updateUI];
+}
+
+- (void)didSelectLocation:(NSNotification *)notification {
+    self.selectedLocation = notification.object;;
+    
+    [self updateUI];
 }
 
 #pragma mark - Table view data source

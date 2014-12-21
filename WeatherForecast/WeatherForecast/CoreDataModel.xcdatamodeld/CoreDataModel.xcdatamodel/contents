@@ -4,8 +4,10 @@
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isCurrentLocation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSelected" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weatherURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="currentWeather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MKWeather" inverseName="currentWeatherLocation" inverseEntity="MKWeather" syncable="YES"/>
         <relationship name="forecasts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MKWeather" inverseName="forecastLocation" inverseEntity="MKWeather" syncable="YES"/>
@@ -25,7 +27,7 @@
         <relationship name="forecastLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MKLocation" inverseName="forecasts" inverseEntity="MKLocation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MKLocation" positionX="-45" positionY="9" width="128" height="165"/>
+        <element name="MKLocation" positionX="-45" positionY="9" width="128" height="195"/>
         <element name="MKWeather" positionX="153" positionY="-15" width="128" height="223"/>
     </elements>
 </model>

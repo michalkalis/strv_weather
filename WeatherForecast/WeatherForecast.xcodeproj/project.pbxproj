@@ -37,6 +37,7 @@
 		6CD8B6901A3C64D300B8B28D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD8B68F1A3C64D300B8B28D /* CoreData.framework */; };
 		6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */; };
 		6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69F1A3C685F00B8B28D /* CoreDataModel.xcdatamodeld */; };
+		6CDEF0D61A47759900CC4210 /* MKLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */; };
 		6CE06CED1A40A973004804C5 /* MKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE06CEC1A40A973004804C5 /* MKTabBarController.m */; };
 		6CE06CF31A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE06CF21A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m */; };
 		C55316631457E564435E1C0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B88358BF6B4D58BC3B3D55 /* libPods.a */; };
@@ -106,6 +107,9 @@
 		6CD8B69C1A3C677900B8B28D /* MKCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCoreDataManager.h; sourceTree = "<group>"; };
 		6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCoreDataManager.m; sourceTree = "<group>"; };
 		6CD8B6A01A3C685F00B8B28D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6CDEF0D01A4710CE00CC4210 /* MKAddLocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKAddLocationDelegate.h; path = Controllers/MKAddLocationDelegate.h; sourceTree = "<group>"; };
+		6CDEF0D41A47759900CC4210 /* MKLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLocationBuilder.h; sourceTree = "<group>"; };
+		6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLocationBuilder.m; sourceTree = "<group>"; };
 		6CE06CEB1A40A973004804C5 /* MKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKTabBarController.h; path = Controllers/MKTabBarController.h; sourceTree = "<group>"; };
 		6CE06CEC1A40A973004804C5 /* MKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKTabBarController.m; path = Controllers/MKTabBarController.m; sourceTree = "<group>"; };
 		6CE06CF11A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+MKOneObserver.h"; path = "Utilities/Categories/NSNotificationCenter+MKOneObserver.h"; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 		6C76CA4C1A3D9D160053B26A /* REST */ = {
 			isa = PBXGroup;
 			children = (
+				6CDEF0D41A47759900CC4210 /* MKLocationBuilder.h */,
+				6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */,
 				6C76CA4D1A3D9D520053B26A /* MKWeatherAPIClient.h */,
 				6C76CA4E1A3D9D520053B26A /* MKWeatherAPIClient.m */,
 				6C76CA501A3DC6360053B26A /* MKWeatherBuilder.h */,
@@ -353,6 +359,7 @@
 		6CF84F281A3F6E8C00C3A624 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				6CDEF0D01A4710CE00CC4210 /* MKAddLocationDelegate.h */,
 				6C18628F1A43798300A42A68 /* MKAddLocationViewController.h */,
 				6C1862901A43798300A42A68 /* MKAddLocationViewController.m */,
 				6C76CA461A3D98B40053B26A /* MKForecastViewController.h */,
@@ -547,6 +554,7 @@
 				6C1862911A43798300A42A68 /* MKAddLocationViewController.m in Sources */,
 				6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */,
 				6C1862761A42420300A42A68 /* NSDate+MKUtils.m in Sources */,
+				6CDEF0D61A47759900CC4210 /* MKLocationBuilder.m in Sources */,
 				6CD8B6631A3C456C00B8B28D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,8 @@
 @property (nonatomic, retain) NSString * city;
 @property (nonatomic, retain) NSString * country;
 @property (nonatomic, retain) NSString * zip;
+@property (nonatomic, retain) NSString * weatherURLString;
+@property (nonatomic, retain) NSNumber * isSelected;
 @property (nonatomic, retain) NSSet *forecasts;
 @property (nonatomic, retain) MKWeather *currentWeather;
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKAddLocationDelegate.h"
 
 @interface MKAddLocationViewController : UIViewController
+
+@property (nonatomic, weak) id<MKAddLocationDelegate> delegate;
 
 @end

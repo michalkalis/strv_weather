@@ -19,6 +19,8 @@
 @property (nonatomic, strong) MKLocation *selectedLocation;
 
 - (void)locationStartedUpdating:(NSNotification *)__unused notification;
+- (void)locationGettingFailed:(NSNotification *)__unused notification;
 - (void)updateWeatherData:(NSNotification *)notification;
+- (void)didSelectLocation:(NSNotification *)notification;
 
 @end

@@ -20,6 +20,8 @@
 @dynamic city;
 @dynamic country;
 @dynamic zip;
+@dynamic weatherURLString;
+@dynamic isSelected;
 @dynamic forecasts;
 @dynamic currentWeather;
 

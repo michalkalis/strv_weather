@@ -8,6 +8,7 @@
 
 #import "MKViewController.h"
 #import "MKTabBarController.h"
+#import "MKLocationViewController.h"
 
 #import "NSNotificationCenter+MKOneObserver.h"
 
@@ -21,14 +22,19 @@
     [self updateTypesFromSettings];
     
     [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerDidStartUpdatingLocationNotification selector:@selector(locationStartedUpdating:) object:nil];
+    [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerFailedGettingLocationNotification selector:@selector(locationGettingFailed:) object:nil];
     [NSNotificationCenter addToDefaultCenterObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification selector:@selector(updateWeatherData:) object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerDidStartUpdatingLocationNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification object:nil];
+    // Observers are not removed when showing modal controllers
+    if (!self.presentedViewController) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerDidStartUpdatingLocationNotification object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerFailedGettingLocationNotification object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MKTabBarControllerDidFetchWeatherDataNotification object:nil];
+    }
 }
 
 #pragma mark - Auxiliary
@@ -59,6 +65,10 @@
 
 - (void)locationStartedUpdating:(NSNotification *)__unused notification {}
 
+- (void)locationGettingFailed:(NSNotification *)__unused notification {}
+
 - (void)updateWeatherData:(NSNotification *)notification {}
+
+- (void)didSelectLocation:(NSNotification *)notification {}
 
 @end

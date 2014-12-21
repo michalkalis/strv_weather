@@ -22,7 +22,7 @@
     
     if (data) {
         // Firstly remove the previously stored weather objects
-        [[MKCoreDataManager sharedManager] deleteAllObjectOfEntity:@"MKWeather"];
+        [[MKCoreDataManager sharedManager] deleteAllWeatherObjectsForLocation:location];
         
         // Location name
         NSArray *nearestAreas = [NSObject returnObjectOrNil:data[@"nearest_area"]];

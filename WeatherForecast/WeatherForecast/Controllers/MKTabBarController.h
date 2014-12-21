@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSString * const MKTabBarControllerFailedGettingLocationNotification;
 UIKIT_EXTERN NSString * const MKTabBarControllerDidStartUpdatingLocationNotification;
 UIKIT_EXTERN NSString * const MKTabBarControllerDidFetchWeatherDataNotification;
 
