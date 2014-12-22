@@ -56,6 +56,7 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
     // Location services disabled, skipping location update
     if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
         [self stopGettingLocation];
+        [self postLocationGettingFailedNotification];
     }
     else if (!self.locationManager) {
         self.locationManager = [[CLLocationManager alloc] init];
@@ -75,8 +76,6 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
 }
 
 - (void)stopGettingLocation {
-    [self postLocationGettingFailedNotification];
-    
     [self.locationManager stopUpdatingLocation];
     self.locationManager.delegate = nil; // Delegate still send one more message although is stopped
 }

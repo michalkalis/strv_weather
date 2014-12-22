@@ -64,6 +64,7 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
     [super viewWillAppear:animated];
     
     self.selectedLocation = [[MKCoreDataManager sharedManager] fetchSelectedLocationObject];
+    self.currentWeather = self.selectedLocation.currentWeather;
     
     [self updateUI];
 }

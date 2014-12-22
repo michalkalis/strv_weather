@@ -15,16 +15,20 @@
 #import "MKWeather.h"
 #import "MKAddLocationDelegate.h"
 
+#import <SWTableViewCell/NSMutableArray+SWUtilityButtons.h>
+#import "UIColor+MKHexString.h"
 #import "UITableView+MKEmptyCells.h"
 
 static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
 
-@interface MKLocationViewController () <UITableViewDataSource, UITableViewDelegate, MKAddLocationDelegate>
+@interface MKLocationViewController () <UITableViewDataSource, UITableViewDelegate, MKAddLocationDelegate, SWTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *locations;
 @property (nonatomic) MKWeatherUnitsOfTemperatureType unitsOfTemperature;
+
+@property (nonatomic, getter=shouldReloadData) BOOL reloadData;
 
 - (IBAction)dismiss:(id)sender;
 
@@ -44,6 +48,14 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     self.title = NSLocalizedString(@"Location", @"Location");
     
     [self stylize];
+    
+    self.reloadData = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.reloadData = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -102,6 +114,24 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     [self.tableView reloadData];
 }
 
+#pragma mark - Swipe cell delegate
+
+- (void)swipeableTableViewCell:(MKWeatherCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSMutableArray *mutableLocations = [self.locations mutableCopy];
+    [mutableLocations removeObjectAtIndex:indexPath.row];
+    self.locations = [mutableLocations copy];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    if ([cell.location.isSelected boolValue]) {
+        MKLocation *newlySelectedLocation = self.locations[indexPath.row - 1];
+        newlySelectedLocation.isSelected = @YES;
+    }
+    
+    [[MKCoreDataManager sharedManager].managedObjectContext deleteObject:cell.location];
+    [[MKCoreDataManager sharedManager] saveContext];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -117,8 +147,17 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     
     MKLocation *location = self.locations[indexPath.row];
     
+    cell.reloadData = self.shouldReloadData;
     cell.unitsOfTemperature = self.unitsOfTemperature;
     cell.location = location;
+    cell.delegate = self;
+    
+    // Add swipe-to-delete functionality for all cells but first, based on current location
+    if (indexPath.row > 0) {
+        NSMutableArray *rightUtilityButtons = [NSMutableArray array];
+        [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor colorWithHexString:@"#FC7337"] icon:[UIImage imageNamed:@"DeleteIcon"]];
+        cell.rightUtilityButtons = rightUtilityButtons;
+    }
     
     return cell;
 }

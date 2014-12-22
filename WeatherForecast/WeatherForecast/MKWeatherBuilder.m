@@ -24,13 +24,6 @@
         // Firstly remove the previously stored weather objects
         [[MKCoreDataManager sharedManager] deleteAllWeatherObjectsForLocation:location];
         
-        // Location name
-        NSArray *nearestAreas = [NSObject returnObjectOrNil:data[@"nearest_area"]];
-        if (nearestAreas && nearestAreas.count > 0) {
-            location.city = [MKWeatherBuilder parseCityFromDictionary:nearestAreas.firstObject];
-            location.country = [MKWeatherBuilder parseCountryFromDictionary:nearestAreas.firstObject];
-        }
-        
         // Current weather
         NSArray *currentConditions = [NSObject returnObjectOrNil:data[@"current_condition"]];
         

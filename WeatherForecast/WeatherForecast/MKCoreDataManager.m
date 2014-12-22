@@ -66,10 +66,7 @@
     }
     
     MKLocation *locationObject;
-    if (objects.count == 0) {
-        locationObject = [[MKLocation alloc] initWithContext:[MKCoreDataManager sharedManager].managedObjectContext];
-    }
-    else {
+    if (objects.count > 0) {
         locationObject = objects.firstObject;
     }
     

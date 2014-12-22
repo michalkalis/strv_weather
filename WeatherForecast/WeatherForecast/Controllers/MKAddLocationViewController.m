@@ -31,7 +31,7 @@ static NSString * const MKAddLocationViewControllerCellIdentifier = @"MKAddLocat
 
 - (void)setFoundLocations:(NSArray *)foundLocations {
     if (!foundLocations || foundLocations.count == 0) {
-        [self deleteFoundLocationsExpectLocation:nil];
+        [self deleteFoundLocationsExceptLocation:nil];
     }
     
     _foundLocations = foundLocations;
@@ -64,7 +64,7 @@ static NSString * const MKAddLocationViewControllerCellIdentifier = @"MKAddLocat
     self.searchBar.barTintColor = [UIColor colorWithHexString:@"#2f91ff"];
 }
 
-- (void)deleteFoundLocationsExpectLocation:(MKLocation *)location {
+- (void)deleteFoundLocationsExceptLocation:(MKLocation *)location {
     for (MKLocation *l in self.foundLocations) {
         if (!location || l != location) {
             [[MKCoreDataManager sharedManager].managedObjectContext deleteObject:l];
@@ -87,6 +87,10 @@ static NSString * const MKAddLocationViewControllerCellIdentifier = @"MKAddLocat
 #pragma mark - Search bar delegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+#ifdef DEBUG
+    NSLog(@"search text: %@", searchText);
+#endif
+    
     self.searchText = searchText;
     [self.searchTask cancel];
     
@@ -102,8 +106,16 @@ static NSString * const MKAddLocationViewControllerCellIdentifier = @"MKAddLocat
     
     [self showActivityIndicator];
     self.searchTask = [[MKWeatherAPIClient sharedClient] searchLocationsWithText:searchText withBlock:^(NSArray *locations, NSError *error) {
-        [self hideActivityIndicator];
+#ifdef DEBUG
+        NSLog(@"locations count: %lu", (unsigned long)locations.count);
+#endif
+        // Activity indicator is not hidden when the task has been cancelled, as a new search (task) is ongoing
+        if (error && error.code != NSURLErrorCancelled) {
+            [self hideActivityIndicator];
+        }
+        
         if (locations && locations.count > 0) {
+            [self hideActivityIndicator];
             self.foundLocations = locations;
             
             [self.tableView reloadData];
@@ -149,7 +161,7 @@ static NSString * const MKAddLocationViewControllerCellIdentifier = @"MKAddLocat
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self deleteFoundLocationsExpectLocation:self.foundLocations[indexPath.row]];
+    [self deleteFoundLocationsExceptLocation:self.foundLocations[indexPath.row]];
     [[MKCoreDataManager sharedManager] saveContext];
     
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -11,7 +11,14 @@
 #import "MKWeather.h"
 #import "MKWeatherAPIClient.h"
 
+#import "UIColor+MKHexString.h"
+
 @implementation MKWeatherCell
+
+- (void)awakeFromNib {
+    self.activityIndicator.color = [UIColor colorWithHexString:@"#2f91ff"];
+    self.activityIndicator.hidden = YES;
+}
 
 - (void)setLocation:(MKLocation *)location {
     _location = location;
@@ -24,17 +31,34 @@
     self.temperatureLabel.text = [weather temperatureWithDegreesInUnitsOfTemperature:self.unitsOfTemperature];
     self.currentLocationImage.hidden = ![location.isCurrentLocation boolValue];
     
-    __weak __typeof__(self) weakSelf = self;
-    if (!location.forecasts || location.forecasts.count == 0) {
-        [[MKWeatherAPIClient sharedClient] fetchWeatherDataAtLocation:location withBlock:^(MKLocation *fetchedLocation, NSError *error) {
+    if (self.shouldReloadData) {
+        [self showActivityIndicator];
+        
+        __weak __typeof__(self) weakSelf = self;
+        [[MKWeatherAPIClient sharedClient] fetchWeatherDataAtLocation:self.location withBlock:^(MKLocation *fetchedLocation, NSError *error) {
+            [weakSelf hideActivityIndicator];
+            
             if (fetchedLocation) {
                 weakSelf.weatherIcon.image = [fetchedLocation.currentWeather weatherImageFromTextualDescription];
-                weakSelf.titleLabel.text = fetchedLocation.city;
                 weakSelf.weatherTextLabel.text = fetchedLocation.currentWeather.textualDescription;
                 weakSelf.temperatureLabel.text = [fetchedLocation.currentWeather temperatureWithDegreesInUnitsOfTemperature:self.unitsOfTemperature];
             }
         }];
     }
+}
+
+- (void)showActivityIndicator {
+    self.activityIndicator.hidden = NO;
+    self.temperatureLabel.hidden = YES;
+    
+    [self.activityIndicator startAnimating];
+}
+
+- (void)hideActivityIndicator {
+    self.activityIndicator.hidden = YES;
+    self.temperatureLabel.hidden = NO;
+        
+    [self.activityIndicator stopAnimating];
 }
 
 @end
