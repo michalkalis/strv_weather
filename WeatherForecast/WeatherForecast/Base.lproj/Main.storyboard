@@ -158,12 +158,17 @@ Please add a new location manually.</string>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEI-5J-VoC" userLabel="share label">
-                                        <rect key="frame" x="137" y="424" width="47" height="18"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wR3-Yl-4Jd">
+                                        <rect key="frame" x="137" y="418" width="47" height="30"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
-                                        <color key="textColor" red="1" green="0.53333333333333333" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="Share">
+                                            <color key="titleColor" red="1" green="0.53333333329999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareLocation:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ZOy-id-zUg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -173,20 +178,20 @@ Please add a new location manually.</string>
                                     <constraint firstItem="i6x-lC-CvP" firstAttribute="top" secondItem="fKw-Ri-f2I" secondAttribute="bottom" constant="59" id="3pC-gg-Au8"/>
                                     <constraint firstItem="zHq-bR-5Rh" firstAttribute="top" secondItem="RpX-uZ-ias" secondAttribute="bottom" constant="27" id="4XC-TW-fz2"/>
                                     <constraint firstItem="i6x-lC-CvP" firstAttribute="centerX" secondItem="t7a-kV-4Tp" secondAttribute="centerX" constant="0.5" id="4dV-xn-GEv"/>
-                                    <constraint firstAttribute="bottom" secondItem="hEI-5J-VoC" secondAttribute="bottom" constant="13" id="4fn-y6-QdB"/>
                                     <constraint firstItem="XX8-Q5-a4i" firstAttribute="top" secondItem="ta0-3o-0cf" secondAttribute="bottom" constant="8" id="86M-YB-jMP"/>
                                     <constraint firstItem="Zs1-KV-wiP" firstAttribute="top" secondItem="Qaf-YS-G6M" secondAttribute="bottom" constant="35" id="A3v-le-4v8"/>
-                                    <constraint firstAttribute="centerX" secondItem="hEI-5J-VoC" secondAttribute="centerX" constant="-0.5" id="AOd-P0-dCE"/>
                                     <constraint firstItem="RpX-uZ-ias" firstAttribute="top" secondItem="Zs1-KV-wiP" secondAttribute="bottom" constant="14" id="EX6-GG-zgy"/>
                                     <constraint firstAttribute="centerX" secondItem="RpX-uZ-ias" secondAttribute="centerX" id="EvT-hO-xAg"/>
                                     <constraint firstAttribute="centerX" secondItem="Zs1-KV-wiP" secondAttribute="centerX" constant="-0.5" id="G0w-7U-vp9"/>
+                                    <constraint firstItem="wR3-Yl-4Jd" firstAttribute="top" secondItem="ixu-vt-mMw" secondAttribute="bottom" constant="12" id="Ina-4j-SbT"/>
+                                    <constraint firstAttribute="centerX" secondItem="wR3-Yl-4Jd" secondAttribute="centerX" constant="-0.5" id="Jad-1E-Rey"/>
                                     <constraint firstItem="jvo-WW-y9t" firstAttribute="leading" secondItem="fKw-Ri-f2I" secondAttribute="trailing" constant="83" id="JhA-5S-Gyi"/>
-                                    <constraint firstItem="hEI-5J-VoC" firstAttribute="top" secondItem="ixu-vt-mMw" secondAttribute="bottom" constant="18" id="O8O-kn-fBq"/>
                                     <constraint firstItem="RTu-Sa-Hnq" firstAttribute="top" secondItem="fKw-Ri-f2I" secondAttribute="bottom" constant="7" id="P8n-Kf-rwm"/>
                                     <constraint firstItem="t7a-kV-4Tp" firstAttribute="top" secondItem="i6x-lC-CvP" secondAttribute="bottom" constant="8" id="PFU-LD-OpR"/>
                                     <constraint firstItem="fKw-Ri-f2I" firstAttribute="centerY" secondItem="jvo-WW-y9t" secondAttribute="centerY" id="PaG-Eh-f82"/>
                                     <constraint firstItem="Zs1-KV-wiP" firstAttribute="centerY" secondItem="NoI-0i-z8U" secondAttribute="centerY" constant="0.5" id="Pp0-dO-BMC"/>
                                     <constraint firstItem="ta0-3o-0cf" firstAttribute="top" secondItem="fKw-Ri-f2I" secondAttribute="bottom" constant="58" id="SXb-a9-ypN"/>
+                                    <constraint firstAttribute="bottom" secondItem="wR3-Yl-4Jd" secondAttribute="bottom" constant="7" id="T8t-Ep-Cca"/>
                                     <constraint firstItem="ta0-3o-0cf" firstAttribute="centerX" secondItem="XX8-Q5-a4i" secondAttribute="centerX" id="WwL-ue-nqP"/>
                                     <constraint firstItem="fKw-Ri-f2I" firstAttribute="top" secondItem="zHq-bR-5Rh" secondAttribute="bottom" constant="26" id="Yhp-Io-eF0"/>
                                     <constraint firstAttribute="centerX" secondItem="zHq-bR-5Rh" secondAttribute="centerX" constant="-0.5" id="ZBj-2O-gaQ"/>
@@ -814,6 +819,6 @@ Please add a new location manually.</string>
         <image name="Wind" width="25" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="enT-k5-Ecg"/>
+        <segue reference="6HZ-GE-bLz"/>
     </inferredMetricsTieBreakers>
 </document>

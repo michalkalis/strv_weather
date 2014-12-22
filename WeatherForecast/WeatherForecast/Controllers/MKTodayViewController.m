@@ -35,6 +35,8 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 
 @property (nonatomic, strong) MKWeather *currentWeather;
 
+- (IBAction)shareLocation:(id)sender;
+
 @end
 
 @implementation MKTodayViewController
@@ -67,6 +69,17 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
     self.currentWeather = self.selectedLocation.currentWeather;
     
     [self updateUI];
+}
+
+#pragma mark - Actions
+
+- (IBAction)shareLocation:(id)sender {
+    NSString *sharedString = [NSString stringWithFormat:@"Current temperature in %@, %@ is %@", self.selectedLocation.city, self.selectedLocation.country, [self.currentWeather weatherStringInUnitsOfTemperature:self.unitsOfTemperature]];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[sharedString] applicationActivities:nil];
+    [self.navigationController presentViewController:activityViewController animated:YES completion:^{
+        
+    }];
 }
 
 #pragma mark - Auxiliary

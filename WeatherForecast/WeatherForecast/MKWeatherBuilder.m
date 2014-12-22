@@ -14,6 +14,7 @@
 #import "MKWeather.h"
 
 #import "NSDate+MKUtils.h"
+#import "NSString+MKEmptiness.h"
 
 @implementation MKWeatherBuilder
 
@@ -23,6 +24,13 @@
     if (data) {
         // Firstly remove the previously stored weather objects
         [[MKCoreDataManager sharedManager] deleteAllWeatherObjectsForLocation:location];
+        
+        // Location name
+        NSArray *nearestAreas = [NSObject returnObjectOrNil:data[@"nearest_area"]];
+        if ((![location.city notEmpty] || ![location.country notEmpty]) && nearestAreas && nearestAreas.count > 0) {
+            location.city = [MKWeatherBuilder parseCityFromDictionary:nearestAreas.firstObject];
+            location.country = [MKWeatherBuilder parseCountryFromDictionary:nearestAreas.firstObject];
+        }
         
         // Current weather
         NSArray *currentConditions = [NSObject returnObjectOrNil:data[@"current_condition"]];

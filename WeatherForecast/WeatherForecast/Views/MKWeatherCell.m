@@ -31,7 +31,7 @@
     self.temperatureLabel.text = [weather temperatureWithDegreesInUnitsOfTemperature:self.unitsOfTemperature];
     self.currentLocationImage.hidden = ![location.isCurrentLocation boolValue];
     
-    if (self.shouldReloadData) {
+    if (self.shouldReloadData || !self.location.currentWeather) {
         [self showActivityIndicator];
         
         __weak __typeof__(self) weakSelf = self;
