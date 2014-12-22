@@ -104,6 +104,7 @@ static NSString * const MKWeatherCellIdentifier = @"MKWeatherCellIdentifier";
     [self hideActivityIndicator];
     
     MKLocation *location = notification.object;
+    location.isSelected = @YES;
     self.selectedLocation = location;
     
     self.sortedForecasts = [self sortForecasts];

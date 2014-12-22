@@ -65,6 +65,8 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self hideActivityIndicator];
+    
     self.selectedLocation = [[MKCoreDataManager sharedManager] fetchSelectedLocationObject];
     self.currentWeather = self.selectedLocation.currentWeather;
     
@@ -102,14 +104,6 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
     self.cityLabel.adjustsFontSizeToFitWidth = YES;
 }
 
-- (void)fetchWeatherDataAtLocation:(MKLocation *)location {
-    [[MKWeatherAPIClient sharedClient] fetchWeatherDataAtLocation:location withBlock:^(MKLocation *location, NSError *error) {
-        self.currentWeather = location.currentWeather;
-        
-        [self updateUI];
-    }];
-}
-
 - (void)showActivityIndicator {
     self.containerView.hidden = YES;
     self.locationNotAvailableLabel.hidden = YES;
@@ -120,6 +114,7 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
 
 - (void)hideActivityIndicator {
     self.containerView.hidden = NO;
+    self.locationNotAvailableLabel.hidden = YES;
     self.activityIndicator.hidden = YES;
     
     [self.activityIndicator stopAnimating];
@@ -151,6 +146,7 @@ static NSString * const MKTodayViewControllerLocalizedComment = @"Today";
     self.containerView.hidden = NO;
     
     MKLocation *location = notification.object;
+    location.isSelected = @YES;
     self.selectedLocation = location;
     self.currentWeather = self.selectedLocation.currentWeather;
     

@@ -45,6 +45,8 @@ NSString * const MKHTTPSessionManagerURLString = @"https://api.worldweatheronlin
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (block) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Communication error", @"Error") message:NSLocalizedString(@"Weather data couldn't be downloaded, please try again.", @"Error") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Error") otherButtonTitles:nil] show];
+            
             block(nil, error);
         }
     }];
@@ -68,6 +70,7 @@ NSString * const MKHTTPSessionManagerURLString = @"https://api.worldweatheronlin
             block(location, nil);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Communication error", @"Error") message:NSLocalizedString(@"Failed to download weather data.", @"Error") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Error") otherButtonTitles:nil] show];
         if (block) {
             block(nil, error);
         }
@@ -89,6 +92,7 @@ NSString * const MKHTTPSessionManagerURLString = @"https://api.worldweatheronlin
             block([MKLocationBuilder buildLocationObjectsFromJSONObject:responseObject], nil);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Communication error", @"Error") message:NSLocalizedString(@"Failed to find locations.", @"Error") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Error") otherButtonTitles:nil] show];
         if (block) {
             block(nil, error);
         }

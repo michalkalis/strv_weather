@@ -9,36 +9,33 @@
 /* Begin PBXBuildFile section */
 		6C18626F1A422CDF00A42A68 /* MKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C18626E1A422CDF00A42A68 /* MKViewController.m */; };
 		6C1862731A4238FB00A42A68 /* MKWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862721A4238FB00A42A68 /* MKWeatherCell.m */; };
-		6C1862761A42420300A42A68 /* NSDate+MKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862751A42420300A42A68 /* NSDate+MKUtils.m */; };
-		6C1862791A42471800A42A68 /* UITableView+MKEmptyCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862781A42471800A42A68 /* UITableView+MKEmptyCells.m */; };
 		6C18628E1A43712400A42A68 /* MKLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C18628D1A43712400A42A68 /* MKLocationViewController.m */; };
 		6C1862911A43798300A42A68 /* MKAddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1862901A43798300A42A68 /* MKAddLocationViewController.m */; };
 		6C76CA451A3D98A50053B26A /* MKTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA441A3D98A50053B26A /* MKTodayViewController.m */; };
 		6C76CA481A3D98B40053B26A /* MKForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA471A3D98B40053B26A /* MKForecastViewController.m */; };
 		6C76CA4B1A3D98C00053B26A /* MKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA4A1A3D98C00053B26A /* MKSettingsViewController.m */; };
-		6C76CA4F1A3D9D520053B26A /* MKWeatherAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA4E1A3D9D520053B26A /* MKWeatherAPIClient.m */; };
-		6C76CA521A3DC6360053B26A /* MKWeatherBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA511A3DC6360053B26A /* MKWeatherBuilder.m */; };
-		6C76CA561A3DC7C70053B26A /* NSObject+MKNullObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA551A3DC7C70053B26A /* NSObject+MKNullObject.m */; };
 		6C76CA591A3DC9AB0053B26A /* MKLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA581A3DC9AB0053B26A /* MKLocation.m */; };
 		6C76CA5C1A3DC9AC0053B26A /* MKWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA5B1A3DC9AC0053B26A /* MKWeather.m */; };
-		6C76CA5F1A3DCEB40053B26A /* NSManagedObject+MKCustomInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76CA5E1A3DCEB40053B26A /* NSManagedObject+MKCustomInit.m */; };
-		6C8C52421A40B2A900FDB451 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C523D1A40B2A900FDB451 /* ProximaNova-Bold.otf */; };
-		6C8C52431A40B2A900FDB451 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C523E1A40B2A900FDB451 /* ProximaNova-Light.otf */; };
-		6C8C52441A40B2A900FDB451 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C523F1A40B2A900FDB451 /* ProximaNova-Regular.otf */; };
-		6C8C52451A40B2A900FDB451 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C52401A40B2A900FDB451 /* ProximaNova-Semibold.otf */; };
-		6CC380331A40D75C0001793D /* NSString+MKEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC380321A40D75C0001793D /* NSString+MKEmptiness.m */; };
-		6CC3803A1A40E8150001793D /* UIColor+MKHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC380391A40E8150001793D /* UIColor+MKHexString.m */; };
 		6CD8B6631A3C456C00B8B28D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6621A3C456C00B8B28D /* main.m */; };
 		6CD8B6661A3C456C00B8B28D /* MKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B6651A3C456C00B8B28D /* MKAppDelegate.m */; };
 		6CD8B66F1A3C456C00B8B28D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CD8B66D1A3C456C00B8B28D /* Main.storyboard */; };
 		6CD8B6711A3C456C00B8B28D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD8B6701A3C456C00B8B28D /* Images.xcassets */; };
 		6CD8B6801A3C456D00B8B28D /* WeatherForecastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B67F1A3C456D00B8B28D /* WeatherForecastTests.m */; };
 		6CD8B6901A3C64D300B8B28D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD8B68F1A3C64D300B8B28D /* CoreData.framework */; };
-		6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */; };
-		6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8B69F1A3C685F00B8B28D /* CoreDataModel.xcdatamodeld */; };
-		6CDEF0D61A47759900CC4210 /* MKLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */; };
+		6CDEF0D91A4852A500CC4210 /* MKCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0D81A4852A500CC4210 /* MKCoreDataManager.m */; };
+		6CDEF0E81A4852BC00CC4210 /* NSDate+MKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0DB1A4852BC00CC4210 /* NSDate+MKUtils.m */; };
+		6CDEF0E91A4852BC00CC4210 /* NSManagedObject+MKCustomInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0DD1A4852BC00CC4210 /* NSManagedObject+MKCustomInit.m */; };
+		6CDEF0EA1A4852BC00CC4210 /* NSNotificationCenter+MKOneObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0DF1A4852BC00CC4210 /* NSNotificationCenter+MKOneObserver.m */; };
+		6CDEF0EB1A4852BC00CC4210 /* NSObject+MKNullObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0E11A4852BC00CC4210 /* NSObject+MKNullObject.m */; };
+		6CDEF0EC1A4852BC00CC4210 /* NSString+MKEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0E31A4852BC00CC4210 /* NSString+MKEmptiness.m */; };
+		6CDEF0ED1A4852BC00CC4210 /* UIColor+MKHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0E51A4852BC00CC4210 /* UIColor+MKHexString.m */; };
+		6CDEF0EE1A4852BC00CC4210 /* UITableView+MKEmptyCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0E71A4852BC00CC4210 /* UITableView+MKEmptyCells.m */; };
+		6CDEF0F51A4852CC00CC4210 /* MKLocationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0F01A4852CC00CC4210 /* MKLocationBuilder.m */; };
+		6CDEF0F61A4852CC00CC4210 /* MKWeatherAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0F21A4852CC00CC4210 /* MKWeatherAPIClient.m */; };
+		6CDEF0F71A4852CC00CC4210 /* MKWeatherBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0F41A4852CC00CC4210 /* MKWeatherBuilder.m */; };
+		6CDEF1051A48531500CC4210 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF1031A48531500CC4210 /* CoreDataModel.xcdatamodeld */; };
+		6CDEF10B1A48545000CC4210 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF10A1A48545000CC4210 /* Icon */; };
 		6CE06CED1A40A973004804C5 /* MKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE06CEC1A40A973004804C5 /* MKTabBarController.m */; };
-		6CE06CF31A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE06CF21A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m */; };
 		C55316631457E564435E1C0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B88358BF6B4D58BC3B3D55 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +54,6 @@
 		6C18626E1A422CDF00A42A68 /* MKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKViewController.m; path = Controllers/MKViewController.m; sourceTree = "<group>"; };
 		6C1862711A4238FB00A42A68 /* MKWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKWeatherCell.h; path = Views/MKWeatherCell.h; sourceTree = "<group>"; };
 		6C1862721A4238FB00A42A68 /* MKWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKWeatherCell.m; path = Views/MKWeatherCell.m; sourceTree = "<group>"; };
-		6C1862741A42420300A42A68 /* NSDate+MKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MKUtils.h"; sourceTree = "<group>"; };
-		6C1862751A42420300A42A68 /* NSDate+MKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MKUtils.m"; sourceTree = "<group>"; };
-		6C1862771A42471800A42A68 /* UITableView+MKEmptyCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+MKEmptyCells.h"; path = "Utilities/Categories/UITableView+MKEmptyCells.h"; sourceTree = "<group>"; };
-		6C1862781A42471800A42A68 /* UITableView+MKEmptyCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+MKEmptyCells.m"; path = "Utilities/Categories/UITableView+MKEmptyCells.m"; sourceTree = "<group>"; };
 		6C18628C1A43712400A42A68 /* MKLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKLocationViewController.h; path = Controllers/MKLocationViewController.h; sourceTree = "<group>"; };
 		6C18628D1A43712400A42A68 /* MKLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKLocationViewController.m; path = Controllers/MKLocationViewController.m; sourceTree = "<group>"; };
 		6C18628F1A43798300A42A68 /* MKAddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKAddLocationViewController.h; path = Controllers/MKAddLocationViewController.h; sourceTree = "<group>"; };
@@ -71,26 +64,10 @@
 		6C76CA471A3D98B40053B26A /* MKForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKForecastViewController.m; path = Controllers/MKForecastViewController.m; sourceTree = "<group>"; };
 		6C76CA491A3D98C00053B26A /* MKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKSettingsViewController.h; path = Controllers/MKSettingsViewController.h; sourceTree = "<group>"; };
 		6C76CA4A1A3D98C00053B26A /* MKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKSettingsViewController.m; path = Controllers/MKSettingsViewController.m; sourceTree = "<group>"; };
-		6C76CA4D1A3D9D520053B26A /* MKWeatherAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKWeatherAPIClient.h; path = Connection/MKWeatherAPIClient.h; sourceTree = "<group>"; };
-		6C76CA4E1A3D9D520053B26A /* MKWeatherAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKWeatherAPIClient.m; path = Connection/MKWeatherAPIClient.m; sourceTree = "<group>"; };
-		6C76CA501A3DC6360053B26A /* MKWeatherBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKWeatherBuilder.h; sourceTree = "<group>"; };
-		6C76CA511A3DC6360053B26A /* MKWeatherBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKWeatherBuilder.m; sourceTree = "<group>"; };
-		6C76CA541A3DC7C70053B26A /* NSObject+MKNullObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKNullObject.h"; sourceTree = "<group>"; };
-		6C76CA551A3DC7C70053B26A /* NSObject+MKNullObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKNullObject.m"; sourceTree = "<group>"; };
 		6C76CA571A3DC9AB0053B26A /* MKLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKLocation.h; path = Models/MKLocation.h; sourceTree = "<group>"; };
 		6C76CA581A3DC9AB0053B26A /* MKLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKLocation.m; path = Models/MKLocation.m; sourceTree = "<group>"; };
 		6C76CA5A1A3DC9AC0053B26A /* MKWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKWeather.h; path = Models/MKWeather.h; sourceTree = "<group>"; };
 		6C76CA5B1A3DC9AC0053B26A /* MKWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKWeather.m; path = Models/MKWeather.m; sourceTree = "<group>"; };
-		6C76CA5D1A3DCEB40053B26A /* NSManagedObject+MKCustomInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MKCustomInit.h"; sourceTree = "<group>"; };
-		6C76CA5E1A3DCEB40053B26A /* NSManagedObject+MKCustomInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MKCustomInit.m"; sourceTree = "<group>"; };
-		6C8C523D1A40B2A900FDB451 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
-		6C8C523E1A40B2A900FDB451 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
-		6C8C523F1A40B2A900FDB451 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
-		6C8C52401A40B2A900FDB451 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
-		6CC380311A40D75C0001793D /* NSString+MKEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKEmptiness.h"; sourceTree = "<group>"; };
-		6CC380321A40D75C0001793D /* NSString+MKEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKEmptiness.m"; sourceTree = "<group>"; };
-		6CC380381A40E8150001793D /* UIColor+MKHexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MKHexString.h"; sourceTree = "<group>"; };
-		6CC380391A40E8150001793D /* UIColor+MKHexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MKHexString.m"; sourceTree = "<group>"; };
 		6CD8B65D1A3C456C00B8B28D /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8B6611A3C456C00B8B28D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CD8B6621A3C456C00B8B28D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,16 +79,37 @@
 		6CD8B67E1A3C456D00B8B28D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CD8B67F1A3C456D00B8B28D /* WeatherForecastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForecastTests.m; sourceTree = "<group>"; };
 		6CD8B68F1A3C64D300B8B28D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6CD8B69C1A3C677900B8B28D /* MKCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCoreDataManager.h; sourceTree = "<group>"; };
-		6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCoreDataManager.m; sourceTree = "<group>"; };
-		6CD8B6A01A3C685F00B8B28D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		6CDEF0D01A4710CE00CC4210 /* MKAddLocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKAddLocationDelegate.h; path = Controllers/MKAddLocationDelegate.h; sourceTree = "<group>"; };
-		6CDEF0D41A47759900CC4210 /* MKLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLocationBuilder.h; sourceTree = "<group>"; };
-		6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLocationBuilder.m; sourceTree = "<group>"; };
+		6CDEF0D71A4852A500CC4210 /* MKCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKCoreDataManager.h; path = Managers/MKCoreDataManager.h; sourceTree = "<group>"; };
+		6CDEF0D81A4852A500CC4210 /* MKCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKCoreDataManager.m; path = Managers/MKCoreDataManager.m; sourceTree = "<group>"; };
+		6CDEF0DA1A4852BC00CC4210 /* NSDate+MKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+MKUtils.h"; path = "Utilities/Categories/NSDate+MKUtils.h"; sourceTree = "<group>"; };
+		6CDEF0DB1A4852BC00CC4210 /* NSDate+MKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+MKUtils.m"; path = "Utilities/Categories/NSDate+MKUtils.m"; sourceTree = "<group>"; };
+		6CDEF0DC1A4852BC00CC4210 /* NSManagedObject+MKCustomInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MKCustomInit.h"; path = "Utilities/Categories/NSManagedObject+MKCustomInit.h"; sourceTree = "<group>"; };
+		6CDEF0DD1A4852BC00CC4210 /* NSManagedObject+MKCustomInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MKCustomInit.m"; path = "Utilities/Categories/NSManagedObject+MKCustomInit.m"; sourceTree = "<group>"; };
+		6CDEF0DE1A4852BC00CC4210 /* NSNotificationCenter+MKOneObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+MKOneObserver.h"; path = "Utilities/Categories/NSNotificationCenter+MKOneObserver.h"; sourceTree = "<group>"; };
+		6CDEF0DF1A4852BC00CC4210 /* NSNotificationCenter+MKOneObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+MKOneObserver.m"; path = "Utilities/Categories/NSNotificationCenter+MKOneObserver.m"; sourceTree = "<group>"; };
+		6CDEF0E01A4852BC00CC4210 /* NSObject+MKNullObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MKNullObject.h"; path = "Utilities/Categories/NSObject+MKNullObject.h"; sourceTree = "<group>"; };
+		6CDEF0E11A4852BC00CC4210 /* NSObject+MKNullObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MKNullObject.m"; path = "Utilities/Categories/NSObject+MKNullObject.m"; sourceTree = "<group>"; };
+		6CDEF0E21A4852BC00CC4210 /* NSString+MKEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MKEmptiness.h"; path = "Utilities/Categories/NSString+MKEmptiness.h"; sourceTree = "<group>"; };
+		6CDEF0E31A4852BC00CC4210 /* NSString+MKEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MKEmptiness.m"; path = "Utilities/Categories/NSString+MKEmptiness.m"; sourceTree = "<group>"; };
+		6CDEF0E41A4852BC00CC4210 /* UIColor+MKHexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+MKHexString.h"; path = "Utilities/Categories/UIColor+MKHexString.h"; sourceTree = "<group>"; };
+		6CDEF0E51A4852BC00CC4210 /* UIColor+MKHexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MKHexString.m"; path = "Utilities/Categories/UIColor+MKHexString.m"; sourceTree = "<group>"; };
+		6CDEF0E61A4852BC00CC4210 /* UITableView+MKEmptyCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+MKEmptyCells.h"; path = "Utilities/Categories/UITableView+MKEmptyCells.h"; sourceTree = "<group>"; };
+		6CDEF0E71A4852BC00CC4210 /* UITableView+MKEmptyCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+MKEmptyCells.m"; path = "Utilities/Categories/UITableView+MKEmptyCells.m"; sourceTree = "<group>"; };
+		6CDEF0EF1A4852CC00CC4210 /* MKLocationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKLocationBuilder.h; path = REST/MKLocationBuilder.h; sourceTree = "<group>"; };
+		6CDEF0F01A4852CC00CC4210 /* MKLocationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKLocationBuilder.m; path = REST/MKLocationBuilder.m; sourceTree = "<group>"; };
+		6CDEF0F11A4852CC00CC4210 /* MKWeatherAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKWeatherAPIClient.h; path = REST/MKWeatherAPIClient.h; sourceTree = "<group>"; };
+		6CDEF0F21A4852CC00CC4210 /* MKWeatherAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKWeatherAPIClient.m; path = REST/MKWeatherAPIClient.m; sourceTree = "<group>"; };
+		6CDEF0F31A4852CC00CC4210 /* MKWeatherBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKWeatherBuilder.h; path = REST/MKWeatherBuilder.h; sourceTree = "<group>"; };
+		6CDEF0F41A4852CC00CC4210 /* MKWeatherBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKWeatherBuilder.m; path = REST/MKWeatherBuilder.m; sourceTree = "<group>"; };
+		6CDEF1041A48531500CC4210 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6CDEF1061A4853AA00CC4210 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		6CDEF1071A4853AA00CC4210 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		6CDEF1081A4853AA00CC4210 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		6CDEF1091A4853AA00CC4210 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		6CDEF10A1A48545000CC4210 /* Icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Icon"; sourceTree = "<group>"; };
 		6CE06CEB1A40A973004804C5 /* MKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKTabBarController.h; path = Controllers/MKTabBarController.h; sourceTree = "<group>"; };
 		6CE06CEC1A40A973004804C5 /* MKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKTabBarController.m; path = Controllers/MKTabBarController.m; sourceTree = "<group>"; };
-		6CE06CF11A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+MKOneObserver.h"; path = "Utilities/Categories/NSNotificationCenter+MKOneObserver.h"; sourceTree = "<group>"; };
-		6CE06CF21A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+MKOneObserver.m"; path = "Utilities/Categories/NSNotificationCenter+MKOneObserver.m"; sourceTree = "<group>"; };
 		8FF0312C346BEDD651BF2B0C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90B88358BF6B4D58BC3B3D55 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2B4C0C90C827449E4E9C2B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,12 +156,12 @@
 		6C76CA4C1A3D9D160053B26A /* REST */ = {
 			isa = PBXGroup;
 			children = (
-				6CDEF0D41A47759900CC4210 /* MKLocationBuilder.h */,
-				6CDEF0D51A47759900CC4210 /* MKLocationBuilder.m */,
-				6C76CA4D1A3D9D520053B26A /* MKWeatherAPIClient.h */,
-				6C76CA4E1A3D9D520053B26A /* MKWeatherAPIClient.m */,
-				6C76CA501A3DC6360053B26A /* MKWeatherBuilder.h */,
-				6C76CA511A3DC6360053B26A /* MKWeatherBuilder.m */,
+				6CDEF0EF1A4852CC00CC4210 /* MKLocationBuilder.h */,
+				6CDEF0F01A4852CC00CC4210 /* MKLocationBuilder.m */,
+				6CDEF0F11A4852CC00CC4210 /* MKWeatherAPIClient.h */,
+				6CDEF0F21A4852CC00CC4210 /* MKWeatherAPIClient.m */,
+				6CDEF0F31A4852CC00CC4210 /* MKWeatherBuilder.h */,
+				6CDEF0F41A4852CC00CC4210 /* MKWeatherBuilder.m */,
 			);
 			name = REST;
 			sourceTree = "<group>";
@@ -171,20 +169,20 @@
 		6C76CA531A3DC77D0053B26A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				6C1862741A42420300A42A68 /* NSDate+MKUtils.h */,
-				6C1862751A42420300A42A68 /* NSDate+MKUtils.m */,
-				6C76CA5D1A3DCEB40053B26A /* NSManagedObject+MKCustomInit.h */,
-				6C76CA5E1A3DCEB40053B26A /* NSManagedObject+MKCustomInit.m */,
-				6CE06CF11A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.h */,
-				6CE06CF21A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m */,
-				6C76CA541A3DC7C70053B26A /* NSObject+MKNullObject.h */,
-				6C76CA551A3DC7C70053B26A /* NSObject+MKNullObject.m */,
-				6CC380311A40D75C0001793D /* NSString+MKEmptiness.h */,
-				6CC380321A40D75C0001793D /* NSString+MKEmptiness.m */,
-				6CC380381A40E8150001793D /* UIColor+MKHexString.h */,
-				6CC380391A40E8150001793D /* UIColor+MKHexString.m */,
-				6C1862771A42471800A42A68 /* UITableView+MKEmptyCells.h */,
-				6C1862781A42471800A42A68 /* UITableView+MKEmptyCells.m */,
+				6CDEF0DA1A4852BC00CC4210 /* NSDate+MKUtils.h */,
+				6CDEF0DB1A4852BC00CC4210 /* NSDate+MKUtils.m */,
+				6CDEF0DC1A4852BC00CC4210 /* NSManagedObject+MKCustomInit.h */,
+				6CDEF0DD1A4852BC00CC4210 /* NSManagedObject+MKCustomInit.m */,
+				6CDEF0DE1A4852BC00CC4210 /* NSNotificationCenter+MKOneObserver.h */,
+				6CDEF0DF1A4852BC00CC4210 /* NSNotificationCenter+MKOneObserver.m */,
+				6CDEF0E01A4852BC00CC4210 /* NSObject+MKNullObject.h */,
+				6CDEF0E11A4852BC00CC4210 /* NSObject+MKNullObject.m */,
+				6CDEF0E21A4852BC00CC4210 /* NSString+MKEmptiness.h */,
+				6CDEF0E31A4852BC00CC4210 /* NSString+MKEmptiness.m */,
+				6CDEF0E41A4852BC00CC4210 /* UIColor+MKHexString.h */,
+				6CDEF0E51A4852BC00CC4210 /* UIColor+MKHexString.m */,
+				6CDEF0E61A4852BC00CC4210 /* UITableView+MKEmptyCells.h */,
+				6CDEF0E71A4852BC00CC4210 /* UITableView+MKEmptyCells.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -192,20 +190,9 @@
 		6C8C523A1A40B29600FDB451 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				6C8C523B1A40B2A900FDB451 /* ProximaNova */,
+				6CDEF0F81A4852F200CC4210 /* ProximaNova */,
 			);
 			name = Fonts;
-			sourceTree = "<group>";
-		};
-		6C8C523B1A40B2A900FDB451 /* ProximaNova */ = {
-			isa = PBXGroup;
-			children = (
-				6C8C523D1A40B2A900FDB451 /* ProximaNova-Bold.otf */,
-				6C8C523E1A40B2A900FDB451 /* ProximaNova-Light.otf */,
-				6C8C523F1A40B2A900FDB451 /* ProximaNova-Regular.otf */,
-				6C8C52401A40B2A900FDB451 /* ProximaNova-Semibold.otf */,
-			);
-			path = ProximaNova;
 			sourceTree = "<group>";
 		};
 		6CD8B6541A3C456C00B8B28D = {
@@ -311,7 +298,7 @@
 		6CD8B68D1A3C604200B8B28D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6CD8B69F1A3C685F00B8B28D /* CoreDataModel.xcdatamodeld */,
+				6CDEF1031A48531500CC4210 /* CoreDataModel.xcdatamodeld */,
 				6C8C523A1A40B29600FDB451 /* Fonts */,
 				6CD8B6701A3C456C00B8B28D /* Images.xcassets */,
 				6CD8B68E1A3C605300B8B28D /* Storyboards */,
@@ -338,10 +325,23 @@
 		6CD8B6981A3C669A00B8B28D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				6CD8B69C1A3C677900B8B28D /* MKCoreDataManager.h */,
-				6CD8B69D1A3C677900B8B28D /* MKCoreDataManager.m */,
+				6CDEF0D71A4852A500CC4210 /* MKCoreDataManager.h */,
+				6CDEF0D81A4852A500CC4210 /* MKCoreDataManager.m */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		6CDEF0F81A4852F200CC4210 /* ProximaNova */ = {
+			isa = PBXGroup;
+			children = (
+				6CDEF10A1A48545000CC4210 /* Icon */,
+				6CDEF1061A4853AA00CC4210 /* ProximaNova-Bold.otf */,
+				6CDEF1071A4853AA00CC4210 /* ProximaNova-Light.otf */,
+				6CDEF1081A4853AA00CC4210 /* ProximaNova-Regular.otf */,
+				6CDEF1091A4853AA00CC4210 /* ProximaNova-Semibold.otf */,
+			);
+			name = ProximaNova;
+			path = Resources/ProximaNova;
 			sourceTree = "<group>";
 		};
 		6CE06CEA1A40A95A004804C5 /* Container */ = {
@@ -472,12 +472,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDEF10B1A48545000CC4210 /* Icon in Resources */,
 				6CD8B66F1A3C456C00B8B28D /* Main.storyboard in Resources */,
-				6C8C52441A40B2A900FDB451 /* ProximaNova-Regular.otf in Resources */,
 				6CD8B6711A3C456C00B8B28D /* Images.xcassets in Resources */,
-				6C8C52421A40B2A900FDB451 /* ProximaNova-Bold.otf in Resources */,
-				6C8C52431A40B2A900FDB451 /* ProximaNova-Light.otf in Resources */,
-				6C8C52451A40B2A900FDB451 /* ProximaNova-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,28 +526,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C76CA5C1A3DC9AC0053B26A /* MKWeather.m in Sources */,
-				6CC3803A1A40E8150001793D /* UIColor+MKHexString.m in Sources */,
 				6C76CA4B1A3D98C00053B26A /* MKSettingsViewController.m in Sources */,
+				6CDEF0F61A4852CC00CC4210 /* MKWeatherAPIClient.m in Sources */,
 				6C18628E1A43712400A42A68 /* MKLocationViewController.m in Sources */,
 				6C76CA451A3D98A50053B26A /* MKTodayViewController.m in Sources */,
 				6C18626F1A422CDF00A42A68 /* MKViewController.m in Sources */,
-				6C76CA561A3DC7C70053B26A /* NSObject+MKNullObject.m in Sources */,
-				6CC380331A40D75C0001793D /* NSString+MKEmptiness.m in Sources */,
-				6CE06CF31A40ABC7004804C5 /* NSNotificationCenter+MKOneObserver.m in Sources */,
-				6C76CA5F1A3DCEB40053B26A /* NSManagedObject+MKCustomInit.m in Sources */,
 				6CE06CED1A40A973004804C5 /* MKTabBarController.m in Sources */,
+				6CDEF0ED1A4852BC00CC4210 /* UIColor+MKHexString.m in Sources */,
+				6CDEF0EC1A4852BC00CC4210 /* NSString+MKEmptiness.m in Sources */,
 				6CD8B6661A3C456C00B8B28D /* MKAppDelegate.m in Sources */,
+				6CDEF0D91A4852A500CC4210 /* MKCoreDataManager.m in Sources */,
 				6C76CA591A3DC9AB0053B26A /* MKLocation.m in Sources */,
-				6C76CA4F1A3D9D520053B26A /* MKWeatherAPIClient.m in Sources */,
-				6C1862791A42471800A42A68 /* UITableView+MKEmptyCells.m in Sources */,
+				6CDEF0EA1A4852BC00CC4210 /* NSNotificationCenter+MKOneObserver.m in Sources */,
 				6C76CA481A3D98B40053B26A /* MKForecastViewController.m in Sources */,
-				6CD8B6A11A3C685F00B8B28D /* CoreDataModel.xcdatamodeld in Sources */,
+				6CDEF1051A48531500CC4210 /* CoreDataModel.xcdatamodeld in Sources */,
+				6CDEF0F51A4852CC00CC4210 /* MKLocationBuilder.m in Sources */,
 				6C1862731A4238FB00A42A68 /* MKWeatherCell.m in Sources */,
-				6C76CA521A3DC6360053B26A /* MKWeatherBuilder.m in Sources */,
+				6CDEF0EB1A4852BC00CC4210 /* NSObject+MKNullObject.m in Sources */,
+				6CDEF0E91A4852BC00CC4210 /* NSManagedObject+MKCustomInit.m in Sources */,
+				6CDEF0EE1A4852BC00CC4210 /* UITableView+MKEmptyCells.m in Sources */,
+				6CDEF0F71A4852CC00CC4210 /* MKWeatherBuilder.m in Sources */,
+				6CDEF0E81A4852BC00CC4210 /* NSDate+MKUtils.m in Sources */,
 				6C1862911A43798300A42A68 /* MKAddLocationViewController.m in Sources */,
-				6CD8B69E1A3C677900B8B28D /* MKCoreDataManager.m in Sources */,
-				6C1862761A42420300A42A68 /* NSDate+MKUtils.m in Sources */,
-				6CDEF0D61A47759900CC4210 /* MKLocationBuilder.m in Sources */,
 				6CD8B6631A3C456C00B8B28D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,13 +755,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6CD8B69F1A3C685F00B8B28D /* CoreDataModel.xcdatamodeld */ = {
+		6CDEF1031A48531500CC4210 /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6CD8B6A01A3C685F00B8B28D /* CoreDataModel.xcdatamodel */,
+				6CDEF1041A48531500CC4210 /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 6CD8B6A01A3C685F00B8B28D /* CoreDataModel.xcdatamodel */;
-			path = CoreDataModel.xcdatamodeld;
+			currentVersion = 6CDEF1041A48531500CC4210 /* CoreDataModel.xcdatamodel */;
+			name = CoreDataModel.xcdatamodeld;
+			path = Resources/CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
