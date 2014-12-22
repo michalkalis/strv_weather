@@ -30,8 +30,9 @@
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-#warning TODO handle Core Data error
+#ifdef DEBUG
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+#endif
         }
     }
 }

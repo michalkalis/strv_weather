@@ -34,7 +34,6 @@
 		6CDEF0F61A4852CC00CC4210 /* MKWeatherAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0F21A4852CC00CC4210 /* MKWeatherAPIClient.m */; };
 		6CDEF0F71A4852CC00CC4210 /* MKWeatherBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF0F41A4852CC00CC4210 /* MKWeatherBuilder.m */; };
 		6CDEF1051A48531500CC4210 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEF1031A48531500CC4210 /* CoreDataModel.xcdatamodeld */; };
-		6CDEF10B1A48545000CC4210 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = 6CDEF10A1A48545000CC4210 /* Icon */; };
 		6CE06CED1A40A973004804C5 /* MKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE06CEC1A40A973004804C5 /* MKTabBarController.m */; };
 		C55316631457E564435E1C0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B88358BF6B4D58BC3B3D55 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -107,7 +106,6 @@
 		6CDEF1071A4853AA00CC4210 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
 		6CDEF1081A4853AA00CC4210 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		6CDEF1091A4853AA00CC4210 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
-		6CDEF10A1A48545000CC4210 /* Icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Icon"; sourceTree = "<group>"; };
 		6CE06CEB1A40A973004804C5 /* MKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKTabBarController.h; path = Controllers/MKTabBarController.h; sourceTree = "<group>"; };
 		6CE06CEC1A40A973004804C5 /* MKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKTabBarController.m; path = Controllers/MKTabBarController.m; sourceTree = "<group>"; };
 		8FF0312C346BEDD651BF2B0C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 		6CDEF0F81A4852F200CC4210 /* ProximaNova */ = {
 			isa = PBXGroup;
 			children = (
-				6CDEF10A1A48545000CC4210 /* Icon */,
 				6CDEF1061A4853AA00CC4210 /* ProximaNova-Bold.otf */,
 				6CDEF1071A4853AA00CC4210 /* ProximaNova-Light.otf */,
 				6CDEF1081A4853AA00CC4210 /* ProximaNova-Regular.otf */,
@@ -472,7 +469,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CDEF10B1A48545000CC4210 /* Icon in Resources */,
 				6CD8B66F1A3C456C00B8B28D /* Main.storyboard in Resources */,
 				6CD8B6711A3C456C00B8B28D /* Images.xcassets in Resources */,
 			);
