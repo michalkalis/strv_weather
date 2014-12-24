@@ -101,23 +101,21 @@ NSTimeInterval const MKTabBarControllerMaxTimeInterval = 30.0;
 #endif
     CLLocation *location = locations.lastObject;
     
-    if (location.horizontalAccuracy < 100.0) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stopGettingLocation) object:nil];
-        [self stopGettingLocation];
-        
-        MKLocation *locationObject = [[MKCoreDataManager sharedManager] fetchCurrentLocationObject];
-        
-        locationObject.isCurrentLocation = @YES;
-        
-        if (location) {
-            locationObject.longitude = [@(location.coordinate.longitude) stringValue];
-            locationObject.latitude = [@(location.coordinate.latitude) stringValue];
-        }
-        
-        [[MKCoreDataManager sharedManager] saveContext];
-        
-        [self fetchWeatherDataForLocation:locationObject];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stopGettingLocation) object:nil];
+    [self stopGettingLocation];
+    
+    MKLocation *locationObject = [[MKCoreDataManager sharedManager] fetchCurrentLocationObject];
+    
+    locationObject.isCurrentLocation = @YES;
+    
+    if (location) {
+        locationObject.longitude = [@(location.coordinate.longitude) stringValue];
+        locationObject.latitude = [@(location.coordinate.latitude) stringValue];
     }
+    
+    [[MKCoreDataManager sharedManager] saveContext];
+    
+    [self fetchWeatherDataForLocation:locationObject];
 }
 
 @end
